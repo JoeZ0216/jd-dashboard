@@ -100,12 +100,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   background: #fff8f0;
 }
 .tab-btn .tab-icon {
-  font-size: 17px;
-  margin-right: 5px;
-  vertical-align: -1px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  vertical-align: middle;
   transition: transform 0.25s;
 }
+.tab-btn .tab-icon svg {
+  display: block;
+}
+.tab-btn.jd-tab:not(.active) .tab-icon .joy-dog { color: #b71c1c; }
+.tab-btn.jd-tab.active .tab-icon .joy-dog { color: #fff; }
+.tab-btn.ali-tab:not(.active) .tab-icon .tmall-cat { color: #1a1a1a; }
+.tab-btn.ali-tab.active .tab-icon .tmall-cat { color: #1a1a1a; }
 .tab-btn:hover .tab-icon {
   transform: scale(1.15);
 }
@@ -356,8 +364,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 <div class="tab-wrapper">
   <div class="tab-label">平台切换</div>
   <div class="tab-nav">
-    <button class="tab-btn jd-tab active" onclick="switchTab('jd')"><span class="tab-icon">🛒</span>京东看板</button>
-    <button class="tab-btn ali-tab" onclick="switchTab('ali')"><span class="tab-icon">🔶</span>阿里看板</button>
+    <button class="tab-btn jd-tab active" onclick="switchTab('jd')"><span class="tab-icon"><svg class="joy-dog" viewBox="0 0 24 24" width="20" height="20"><ellipse cx="6" cy="7" rx="3.5" ry="5.5" transform="rotate(-20 6 7)" fill="currentColor"/><ellipse cx="18" cy="7" rx="3.5" ry="5.5" transform="rotate(20 18 7)" fill="currentColor"/><circle cx="12" cy="13" r="7" fill="currentColor"/></svg></span>京东看板</button>
+    <button class="tab-btn ali-tab" onclick="switchTab('ali')"><span class="tab-icon"><svg class="tmall-cat" viewBox="0 0 24 24" width="20" height="20"><path d="M7 11L5 4l4 5z" fill="currentColor"/><path d="M17 11l2-7-4 5z" fill="currentColor"/><circle cx="12" cy="14.5" r="7" fill="currentColor"/></svg></span>阿里看板</button>
   </div>
 </div>
 
