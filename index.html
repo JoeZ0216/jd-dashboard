@@ -520,9 +520,22 @@ const C = {
   cunliang: '#1565c0', erhua: '#e65100', yixuesheng: '#2e7d32', fuhua: '#6a1b9a',
   red: '#c62828', orange: '#ff9800', green: '#4caf50', gray: '#78909c'
 };
+const jdCharts = [];
+
+// Responsive resize for all tracked charts
+let _jdResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_jdResizeTimer);
+  _jdResizeTimer = setTimeout(() => {
+    jdCharts.forEach(c => {
+      try { c.resize(); } catch(e) {}
+    });
+  }, 150);
+});
+
 
 // ====== 1. 四线年度进度 ======
-new Chart(document.getElementById('fourLineAnnual'), {
+jdCharts.push(new Chart(document.getElementById('fourLineAnnual'), {
   type: 'bar',
   data: {
     labels: ['存量', '二硫化硒', '益血生', '孵化品'],
@@ -557,10 +570,10 @@ new Chart(document.getElementById('fourLineAnnual'), {
     },
     scales: { y: { beginAtZero: true, max: 75, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-});
+}}));
 
 // ====== 2. 四线Q3进度 ======
-new Chart(document.getElementById('fourLineQ3'), {
+jdCharts.push(new Chart(document.getElementById('fourLineQ3'), {
   type: 'bar',
   data: {
     labels: ['存量', '二硫化硒', '益血生', '孵化品'],
@@ -595,10 +608,10 @@ new Chart(document.getElementById('fourLineQ3'), {
     },
     scales: { y: { beginAtZero: true, max: 30, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-});
+}}));
 
 // ====== 3. 四线金额贡献 ======
-new Chart(document.getElementById('fourLineAmount'), {
+jdCharts.push(new Chart(document.getElementById('fourLineAmount'), {
   type: 'bar',
   data: {
     labels: ['存量', '二硫化硒', '益血生', '孵化品'],
@@ -632,10 +645,10 @@ new Chart(document.getElementById('fourLineAmount'), {
     },
     scales: { y: { beginAtZero: true, ticks: { callback: v => v >= 10000 ? (v/10000)+'亿' : v+'万' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-});
+}}));
 
 // ====== 4. 四线同比增长 ======
-new Chart(document.getElementById('fourLineYoy'), {
+jdCharts.push(new Chart(document.getElementById('fourLineYoy'), {
   type: 'bar',
   data: {
     labels: ['存量', '二硫化硒', '益血生', '孵化品'],
@@ -669,10 +682,10 @@ new Chart(document.getElementById('fourLineYoy'), {
     },
     scales: { y: { ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-});
+}}));
 
 // ====== 5. 存量品类年度进度拆解 ======
-new Chart(document.getElementById('categoryAnnual'), {
+jdCharts.push(new Chart(document.getElementById('categoryAnnual'), {
   type: 'bar',
   data: {
     labels: ['呼吸类', '肠胃类(一喵灵)', '皮肤类-存量', '皮肤类-二硫化硒', 'OTC存量合计'],
@@ -711,10 +724,10 @@ new Chart(document.getElementById('categoryAnnual'), {
       y: { grid: { display: false } }
     }
   }
-});
+}}));
 
 // ====== 6. 情景推演（基于最新48.0%） ======
-new Chart(document.getElementById('scenarioChart'), {
+jdCharts.push(new Chart(document.getElementById('scenarioChart'), {
   type: 'line',
   data: {
     labels: ['当前\n48.0%', 'Q3末', 'Q4末'],
@@ -757,10 +770,10 @@ new Chart(document.getElementById('scenarioChart'), {
     },
     scales: { y: { beginAtZero: true, max: 110, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-});
+}}));
 
 // ====== 7. 当周完成贡献饼图 ======
-new Chart(document.getElementById('weeklyDonut'), {
+jdCharts.push(new Chart(document.getElementById('weeklyDonut'), {
   type: 'doughnut',
   data: {
     labels: ['存量', '二硫化硒', '益血生', '孵化品'],
@@ -788,7 +801,7 @@ new Chart(document.getElementById('weeklyDonut'), {
       legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 10, font: { size: 11 } } }
     }
   }
-});
+}}));
 </script>
 
 </body>
