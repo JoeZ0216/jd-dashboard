@@ -532,6 +532,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
       <div style="font-size:11px;color:#90a4ae;margin-top:4px;">年度领先+4.8pt，Q3同比-36.9%</div>
     </div>
   </div>
+</div>
 <!-- Charts Row 1: 四线年度+Q3进度对比 -->
 <div class="section">
   <div class="section-title"><span class="dot" style="background:#1a237e"></span>四线进度对标</div>
@@ -1089,7 +1090,7 @@ jdCharts.push(new Chart(document.getElementById('fourLineAnnual'), {
     },
     scales: { y: { beginAtZero: true, max: 75, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-}}));
+}));
 
 // ====== 2. 四线Q3进度 ======
 jdCharts.push(new Chart(document.getElementById('fourLineQ3'), {
@@ -1127,7 +1128,7 @@ jdCharts.push(new Chart(document.getElementById('fourLineQ3'), {
     },
     scales: { y: { beginAtZero: true, max: 30, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-}}));
+}));
 
 // ====== 3. 四线金额贡献 ======
 jdCharts.push(new Chart(document.getElementById('fourLineAmount'), {
@@ -1164,7 +1165,7 @@ jdCharts.push(new Chart(document.getElementById('fourLineAmount'), {
     },
     scales: { y: { beginAtZero: true, ticks: { callback: v => v >= 10000 ? (v/10000)+'亿' : v+'万' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-}}));
+}));
 
 // ====== 4. 四线同比增长 ======
 jdCharts.push(new Chart(document.getElementById('fourLineYoy'), {
@@ -1201,7 +1202,7 @@ jdCharts.push(new Chart(document.getElementById('fourLineYoy'), {
     },
     scales: { y: { ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-}}));
+}));
 
 // ====== 5. 存量品类年度进度拆解 ======
 jdCharts.push(new Chart(document.getElementById('categoryAnnual'), {
@@ -1243,7 +1244,7 @@ jdCharts.push(new Chart(document.getElementById('categoryAnnual'), {
       y: { grid: { display: false } }
     }
   }
-}}));
+}));
 
 // ====== 6. 情景推演（基于最新48.0%） ======
 jdCharts.push(new Chart(document.getElementById('scenarioChart'), {
@@ -1289,7 +1290,7 @@ jdCharts.push(new Chart(document.getElementById('scenarioChart'), {
     },
     scales: { y: { beginAtZero: true, max: 110, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
   }
-}}));
+}));
 
 // ====== 7. 当周完成贡献饼图 ======
 jdCharts.push(new Chart(document.getElementById('weeklyDonut'), {
@@ -1320,7 +1321,7 @@ jdCharts.push(new Chart(document.getElementById('weeklyDonut'), {
       legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 10, font: { size: 11 } } }
     }
   }
-}}));
+}));
 }
 
 // ============== ALI CHARTS ==============
