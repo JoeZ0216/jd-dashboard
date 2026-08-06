@@ -43,6 +43,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .section-title .dot { width: 8px; height: 8px; border-radius: 50%; }
 .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .charts-row-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.charts-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .chart-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 .chart-card h3 { font-size: 14px; font-weight: 600; color: #546e7a; margin-bottom: 12px; }
 .chart-wrap { position: relative; height: 280px; }
@@ -58,19 +59,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .badge.orange { background: #ffe0b2; color: #e65100; }
 .badge.green { background: #c8e6c9; color: #2e7d32; }
 .footer { text-align: center; padding: 16px; font-size: 11px; color: #90a4ae; }
-.line-card { background: #fff; border-radius: 12px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-top: 4px solid #ccc; }
+.line-card { background: #fff; border-radius: 10px; padding: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-top: 4px solid #ccc; }
 .line-card.green-top { border-top-color: #4caf50; }
 .line-card.orange-top { border-top-color: #ff9800; }
 .line-card.purple-top { border-top-color: #6a1b9a; }
 .line-card.blue-top { border-top-color: #1565c0; }
-.line-card .line-name { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
-.line-card .line-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
-.line-card .line-label { font-size: 12px; color: #78909c; }
-.line-card .line-val { font-size: 13px; font-weight: 700; }
+.line-card .line-name { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+.line-card .line-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
+.line-card .line-label { font-size: 11px; color: #78909c; }
+.line-card .line-val { font-size: 12px; font-weight: 700; }
 .line-card .line-val.green { color: #2e7d32; }
 .line-card .line-val.orange { color: #e65100; }
 .line-card .line-val.red { color: #c62828; }
-.line-card .progress-bar { height: 6px; background: #eceff1; border-radius: 3px; margin-top: 8px; overflow: hidden; }
+.line-card .progress-bar { height: 4px; background: #eceff1; border-radius: 2px; margin-top: 4px; overflow: hidden; }
 .line-card .progress-fill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
 
 /* Annual Progress Hero */
@@ -167,7 +168,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .risk-table td { font-size: 11px; padding: 8px 8px; }
   .risk-table { display: block; overflow-x: auto; white-space: nowrap; }
 
-  .line-card { padding: 14px; }
+  .line-card { padding: 10px; }
 
   .weekly-wrap { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
   .weekly-summary { border-right: none; border-bottom: 1px solid #eceff1; padding-right: 0; padding-bottom: 16px; }
@@ -216,7 +217,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .section { padding: 8px 12px 14px; }
   .section-title { font-size: 14px; }
   .charts-row { grid-template-columns: 1fr; gap: 12px; }
-  .charts-row-3 { grid-template-columns: 1fr; gap: 12px; }
+  .charts-row-3 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .charts-row-4 { grid-template-columns: 1fr; gap: 12px; }
   .chart-card { padding: 14px; }
   .chart-card h3 { font-size: 13px; }
@@ -228,7 +229,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .risk-table td { font-size: 11px; padding: 8px 8px; }
   .risk-table { display: block; overflow-x: auto; white-space: nowrap; }
 
-  .line-card { padding: 14px; }
+  .line-card { padding: 10px; }
 
   .weekly-wrap { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
   .weekly-summary { border-right: none; border-bottom: 1px solid #eceff1; padding-right: 0; padding-bottom: 16px; }
