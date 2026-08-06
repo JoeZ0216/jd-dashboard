@@ -13,11 +13,105 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .header h1 { font-size: 22px; font-weight: 700; }
 .header .meta { font-size: 13px; opacity: 0.85; }
 
-/* Tab Navigation */
-.tab-nav { display: flex; gap: 0; background: #fff; margin: 0 32px; border-radius: 12px 12px 0 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden; }
-.tab-btn { flex: 1; padding: 14px 24px; border: none; background: #f8f9fb; font-size: 15px; font-weight: 600; color: #78909c; cursor: pointer; transition: all 0.2s; border-bottom: 3px solid transparent; font-family: inherit; }
-.tab-btn:hover { background: #eceff1; color: #546e7a; }
-.tab-btn.active { background: #fff; color: #1a237e; border-bottom-color: #1a237e; }
+/* Tab Navigation — redesigned for prominence */
+.tab-wrapper {
+  margin: 0 32px;
+  padding: 16px 0 0;
+  background: #fff;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+.tab-wrapper::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+  margin: 0 24px;
+}
+.tab-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #b0bec5;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+.tab-nav {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px 16px;
+  justify-content: center;
+}
+.tab-btn {
+  flex: 1;
+  max-width: 220px;
+  padding: 13px 28px;
+  border: 2px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 15px;
+  font-weight: 700;
+  color: #90a4ae;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  position: relative;
+  top: 0;
+}
+.tab-btn:hover {
+  background: #f5f5f5;
+  border-color: #bdbdbd;
+  color: #546e7a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+.tab-btn:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
+.tab-btn.active {
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-1px);
+  cursor: default;
+}
+/* JD active — 京东红 */
+.tab-btn.jd-tab.active {
+  background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
+  box-shadow: 0 6px 20px rgba(198,40,40,0.35);
+}
+.tab-btn.jd-tab:not(.active):hover {
+  border-color: #ef9a9a;
+  color: #c62828;
+  background: #fff5f5;
+}
+/* Ali active — 阿里橙 */
+.tab-btn.ali-tab.active {
+  background: linear-gradient(135deg, #ff6a00 0%, #ff9100 100%);
+  box-shadow: 0 6px 20px rgba(255,106,0,0.35);
+}
+.tab-btn.ali-tab:not(.active):hover {
+  border-color: #ffcc80;
+  color: #e65100;
+  background: #fff8f0;
+}
+.tab-btn .tab-icon {
+  font-size: 17px;
+  margin-right: 5px;
+  vertical-align: -1px;
+  display: inline-block;
+  transition: transform 0.25s;
+}
+.tab-btn:hover .tab-icon {
+  transform: scale(1.15);
+}
+.tab-btn.active .tab-icon {
+  transform: scale(1.1);
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f6fa; color: #2c3e50; }
@@ -192,8 +286,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .header h1 { font-size: 17px; }
   .header .meta { font-size: 11px; }
   .header > div:last-child { font-size: 10px; }
-  .tab-nav { margin: 0 12px; }
-  .tab-btn { padding: 12px 16px; font-size: 14px; }
+  .tab-wrapper { margin: 0 12px; padding-top: 12px; }
+  .tab-nav { padding: 0 12px 12px; gap: 8px; }
+  .tab-btn { padding: 12px 16px; font-size: 14px; max-width: none; }
 
   .annual-hero { margin: 12px 12px; padding: 18px 14px; }
   .annual-hero-grid { grid-template-columns: 1fr; gap: 18px; justify-items: center; }
@@ -258,9 +353,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 </div>
 
 <!-- Tab Navigation -->
-<div class="tab-nav">
-  <button class="tab-btn active" onclick="switchTab('jd')">📊 京东看板</button>
-  <button class="tab-btn" onclick="switchTab('ali')">📊 阿里看板</button>
+<div class="tab-wrapper">
+  <div class="tab-label">平台切换</div>
+  <div class="tab-nav">
+    <button class="tab-btn jd-tab active" onclick="switchTab('jd')"><span class="tab-icon">🛒</span>京东看板</button>
+    <button class="tab-btn ali-tab" onclick="switchTab('ali')"><span class="tab-icon">🔶</span>阿里看板</button>
+  </div>
 </div>
 
 <!-- JD Content -->
