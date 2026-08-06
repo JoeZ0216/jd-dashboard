@@ -551,6 +551,16 @@ Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'PingFang SC', 
 Chart.defaults.font.size = 11;
 Chart.defaults.color = '#546e7a';
 Chart.register(ChartDataLabels);
+const aliCharts = [];
+
+let _aliResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_aliResizeTimer);
+  _aliResizeTimer = setTimeout(() => {
+    aliCharts.forEach(c => { try { c.resize(); } catch(e) {} });
+  }, 150);
+});
+
 const TP = 58.4;
 
 const colors = ['#1565c0','#4caf50','#3949ab','#1a237e','#c62828','#00838f','#ff9800','#6a1b9a','#2e7d32'];
@@ -559,7 +569,7 @@ const catRates = [13.6,38.8,38.9,41.1,43.4,44.3,49.1,50.4,67.1];
 const catColors = ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'];
 
 // ====== 1. Owner weighted ======
-new Chart(document.getElementById('ownerChart'), {
+aliCharts.push(new Chart(document.getElementById('ownerChart'), {
   type: 'bar',
   data: {
     labels: ['伍文聪','陆晓冰','闵野','戴家卫','卢尧'],
@@ -583,10 +593,10 @@ new Chart(document.getElementById('ownerChart'), {
     },
     scales: { y: { beginAtZero: true, max: 70, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
   }
-});
+});)
 
 // ====== 2. Category rate horizontal bar ======
-new Chart(document.getElementById('catRateChart'), {
+aliCharts.push(new Chart(document.getElementById('catRateChart'), {
   type: 'bar',
   data: {
     labels: catNames,
@@ -611,10 +621,10 @@ new Chart(document.getElementById('catRateChart'), {
     },
     scales: { x: { beginAtZero: true, max: 75, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   }
-});
+});)
 
 // ====== 3. YoY ======
-new Chart(document.getElementById('yoyChart'), {
+aliCharts.push(new Chart(document.getElementById('yoyChart'), {
   type: 'bar',
   data: {
     labels: ['维矿物质','妇科用药','风湿骨痛','小儿感冒','皮肤','肠胃用药','处方药','呼吸','益血生'],
@@ -647,10 +657,10 @@ new Chart(document.getElementById('yoyChart'), {
       ctx.fillText('持平线', x, yScale.top - 2); ctx.restore();
     }
   }]
-});
+});)
 
 // ====== 4. Amount structure ======
-new Chart(document.getElementById('amountChart'), {
+aliCharts.push(new Chart(document.getElementById('amountChart'), {
   type: 'bar',
   data: {
     labels: ['呼吸','妇科用药','皮肤','肠胃用药','处方药','小儿感冒','维矿物质','风湿骨痛','益血生'],
@@ -674,10 +684,10 @@ new Chart(document.getElementById('amountChart'), {
     },
     scales: { x: { beginAtZero: true, ticks: {callback: v => v>=10000?(v/10000).toFixed(1)+'亿':v+'万'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   }
-});
+});)
 
 // ====== 5. Weekly completion ======
-new Chart(document.getElementById('weeklyChart'), {
+aliCharts.push(new Chart(document.getElementById('weeklyChart'), {
   type: 'bar',
   data: {
     labels: ['处方药','小儿感冒','妇科用药','肠胃用药','风湿骨痛','皮肤','维矿物质','呼吸'],
@@ -716,10 +726,10 @@ new Chart(document.getElementById('weeklyChart'), {
       ctx.restore();
     }
   }]
-});
+});)
 
 // ====== 6. Scenario projection ======
-new Chart(document.getElementById('scenarioChart'), {
+aliCharts.push(new Chart(document.getElementById('scenarioChart'), {
   type: 'line',
   data: {
     labels: ['当前\n48.3%', 'Q3末', 'Q4末'],
@@ -753,10 +763,10 @@ new Chart(document.getElementById('scenarioChart'), {
     },
     scales: { y: { beginAtZero: true, max: 110, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
   }
-});
+});)
 
 // ====== 7. Weekly Donut ======
-new Chart(document.getElementById('weeklyDonut'), {
+aliCharts.push(new Chart(document.getElementById('weeklyDonut'), {
   type: 'doughnut',
   data: {
     labels: ['呼吸','皮肤','肠胃用药','维矿物质','其他'],
@@ -776,7 +786,7 @@ new Chart(document.getElementById('weeklyDonut'), {
       legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:10, font: {size:11}} }
     }
   }
-});
+});)
 </script>
 </body>
 </html>
