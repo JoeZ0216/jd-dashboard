@@ -11,7 +11,7 @@
 body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f6fa; color: #2c3e50; }
 .header { background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%); color: #fff; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; }
 .header h1 { font-size: 22px; font-weight: 700; }
-.header .meta { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+.header .meta { font-size: 13px; opacity: 0.85; }
 .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 20px 32px; }
 .kpi-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
 .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
@@ -30,11 +30,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .section-title { font-size: 16px; font-weight: 700; color: #37474f; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
 .section-title .dot { width: 8px; height: 8px; border-radius: 50%; }
 .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.charts-row-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.charts-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .chart-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 .chart-card h3 { font-size: 14px; font-weight: 600; color: #546e7a; margin-bottom: 12px; }
-.chart-wrap { position: relative; height: 300px; }
-.chart-wrap-sm { position: relative; height: 240px; }
+.chart-wrap { position: relative; height: 280px; }
+.chart-wrap-sm { position: relative; height: 220px; }
 .risk-table-wrap { padding: 12px 32px 20px; }
 .risk-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 .risk-table th { background: #c62828; color: #fff; font-size: 13px; padding: 10px 14px; text-align: left; font-weight: 600; }
@@ -46,15 +46,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .badge.orange { background: #ffe0b2; color: #e65100; }
 .badge.green { background: #c8e6c9; color: #2e7d32; }
 .footer { text-align: center; padding: 16px; font-size: 11px; color: #90a4ae; }
+
+/* Line Cards for 9 categories */
 .line-card { background: #fff; border-radius: 12px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-top: 4px solid #ccc; }
-.line-card.green-top { border-top-color: #4caf50; }
-.line-card.orange-top { border-top-color: #ff9800; }
-.line-card.purple-top { border-top-color: #6a1b9a; }
-.line-card.blue-top { border-top-color: #1565c0; }
-.line-card.indigo-top { border-top-color: #3949ab; }
-.line-card.navy-top { border-top-color: #1a237e; }
-.line-card.red-top { border-top-color: #c62828; }
-.line-card.teal-top { border-top-color: #00838f; }
 .line-card .line-name { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
 .line-card .line-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
 .line-card .line-label { font-size: 12px; color: #78909c; }
@@ -74,11 +68,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .annual-gauge-center .pct { font-size: 32px; font-weight: 900; color: #ff9800; }
 .annual-gauge-center .pct-label { font-size: 12px; color: #78909c; margin-top: 2px; }
 .annual-bars { display: flex; flex-direction: column; gap: 14px; }
-.annual-bar-item { display: grid; grid-template-columns: 84px 1fr 64px 72px; gap: 8px; align-items: center; }
+.annual-bar-item { display: grid; grid-template-columns: 80px 1fr 70px 70px; gap: 8px; align-items: center; }
 .annual-bar-name { font-size: 14px; font-weight: 700; }
-.annual-bar-track { height: 26px; background: #eceff1; border-radius: 6px; position: relative; overflow: hidden; }
+.annual-bar-track { height: 28px; background: #eceff1; border-radius: 6px; position: relative; overflow: hidden; }
 .annual-bar-fill { height: 100%; border-radius: 6px; transition: width 1s ease; position: relative; }
-.annual-bar-fill .inner-label { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap; }
+.annual-bar-fill .inner-label { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 12px; font-weight: 700; color: #fff; white-space: nowrap; }
 .annual-bar-timeline { position: absolute; top: 0; bottom: 0; width: 2px; background: #c62828; z-index: 2; }
 .annual-bar-timeline-label { position: absolute; top: -18px; font-size: 10px; color: #c62828; font-weight: 600; white-space: nowrap; }
 .annual-bar-pct { font-size: 14px; font-weight: 800; text-align: right; }
@@ -90,9 +84,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .annual-bar-total { background: #1a237e; color: #fff; border-radius: 8px; padding: 4px 8px; font-size: 12px; font-weight: 700; }
 
 /* Weekly Module */
-.weekly-wrap { display: grid; grid-template-columns: 240px 1fr 240px; gap: 20px; background: #fff; border-radius: 16px; padding: 24px 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); align-items: center; }
+.weekly-wrap { display: grid; grid-template-columns: 240px 1fr 220px; gap: 20px; background: #fff; border-radius: 16px; padding: 24px 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); align-items: center; }
 .weekly-summary { text-align: center; border-right: 1px solid #eceff1; padding-right: 20px; }
-.weekly-amount { font-size: 34px; font-weight: 900; color: #ff9800; line-height: 1.1; }
+.weekly-amount { font-size: 36px; font-weight: 900; color: #ff9800; line-height: 1.1; }
 .weekly-amount.green { color: #2e7d32; }
 .weekly-label { font-size: 13px; color: #78909c; margin-top: 4px; }
 .weekly-meta { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
@@ -109,23 +103,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 .wl-card.orange { border-top-color: #ff9800; }
 .wl-card.green { border-top-color: #4caf50; }
 .wl-card.purple { border-top-color: #6a1b9a; }
-.wl-card.indigo { border-top-color: #3949ab; }
-.wl-card.navy { border-top-color: #1a237e; }
 .wl-name { font-size: 12px; font-weight: 700; margin-bottom: 6px; color: #546e7a; }
-.wl-amount { font-size: 19px; font-weight: 800; margin-bottom: 8px; }
+.wl-amount { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
 .wl-bar { height: 6px; background: #eceff1; border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
 .wl-fill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
 .wl-pct { font-size: 11px; color: #90a4ae; }
 .wl-delta { font-size: 10px; font-weight: 600; margin-top: 4px; }
 .wl-delta.up { color: #2e7d32; }
 .wl-delta.down { color: #c62828; }
-.weekly-chart { position: relative; height: 220px; }
+.weekly-chart { position: relative; height: 200px; }
 
-/* Insight callout */
-.insight-box { background: #e8f0fe; border-left: 4px solid #1a237e; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 0 32px 20px; font-size: 14px; line-height: 1.8; }
-.insight-box strong { color: #1a237e; }
-
-/* ============ 移动端适配 ============ */
+/* Mobile */
 @media (max-width: 768px) {
   .header { padding: 16px 16px; flex-direction: column; gap: 6px; align-items: flex-start; }
   .header h1 { font-size: 17px; }
@@ -137,7 +125,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .annual-gauge-svg { width: 150px; height: 150px; }
   .annual-gauge-center .pct { font-size: 26px; }
   .annual-bars { width: 100%; }
-  .annual-bar-item { grid-template-columns: 60px 1fr 50px 56px; gap: 4px; }
+  .annual-bar-item { grid-template-columns: 60px 1fr 52px 52px; gap: 4px; }
   .annual-bar-name { font-size: 12px; }
   .annual-bar-fill .inner-label { font-size: 9px; right: 4px; }
   .annual-bar-pct { font-size: 12px; }
@@ -151,10 +139,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .section { padding: 8px 12px 14px; }
   .section-title { font-size: 14px; }
   .charts-row { grid-template-columns: 1fr; gap: 12px; }
-  .charts-row-4 { grid-template-columns: 1fr; gap: 12px; }
+  .charts-row-3 { grid-template-columns: 1fr; gap: 12px; }
   .chart-card { padding: 14px; }
   .chart-card h3 { font-size: 13px; }
-  .chart-wrap { height: 260px; }
+  .chart-wrap { height: 240px; }
+  .chart-wrap-sm { height: 180px; }
   .risk-table-wrap { padding: 8px 12px 14px; }
   .risk-table th { font-size: 11px; padding: 8px 8px; }
   .risk-table td { font-size: 11px; padding: 8px 8px; }
@@ -164,9 +153,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .weekly-summary { border-right: none; border-bottom: 1px solid #eceff1; padding-right: 0; padding-bottom: 16px; }
   .weekly-amount { font-size: 28px; }
   .weekly-lines { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .weekly-chart { height: 200px; }
+  .weekly-chart { height: 180px; }
   .wl-amount { font-size: 16px; }
-  .insight-box { margin: 0 12px 14px; }
   .footer { font-size: 10px; padding: 12px; }
 }
 @media (max-width: 380px) {
@@ -175,88 +163,81 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .annual-bar-fill .inner-label { display: none; }
 }
 </style>
+
 </head>
 <body>
 
 <div class="header">
   <div>
     <h1>📊 阿里平台电商业务看板</h1>
-    <div class="meta">数据截止：2026-07-30（第31周） | 年度时间进度 <b>57.8%</b> | 单位：万元</div>
+    <div class="meta">数据截止：2026-08-03（第31周） | 年度时间进度 <b>58.4%</b></div>
   </div>
   <div style="font-size:12px; opacity:0.7;">阿里平台 · 医药工业电商运营</div>
 </div>
 
-<!-- 年度动销进度 Hero -->
+<!-- 年度进度 Hero -->
 <div class="annual-hero">
   <div class="annual-hero-grid">
-    <!-- 左侧：大圆环仪表 -->
     <div class="annual-gauge-wrap">
       <svg class="annual-gauge-svg" viewBox="0 0 200 200">
         <circle cx="100" cy="100" r="80" fill="none" stroke="#eceff1" stroke-width="14"/>
-        <circle cx="100" cy="100" r="80" fill="none" stroke="#c62828" stroke-width="14" stroke-dasharray="503 503" stroke-dashoffset="0" stroke-linecap="round" opacity="0.18"/>
-        <circle cx="100" cy="100" r="80" fill="none" stroke="#ff9800" stroke-width="14" stroke-dasharray="227.7 275.0" stroke-dashoffset="0" stroke-linecap="round"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#c62828" stroke-width="14" stroke-dasharray="293.6 209.1" stroke-dashoffset="0" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#ff9800" stroke-width="14" stroke-dasharray="243.0 259.7" stroke-dashoffset="0" stroke-linecap="round"/>
       </svg>
       <div class="annual-gauge-center">
-        <div class="pct">45.3%</div>
+        <div class="pct">48.3%</div>
         <div class="pct-label">整体动销进度</div>
       </div>
     </div>
-    <!-- 右侧：按负责人加权进度条 -->
     <div class="annual-bars">
       <div class="annual-bar-item">
         <div class="annual-bar-name"><span class="annual-bar-total">合计</span></div>
-        <div class="annual-bar-track">
-          <div class="annual-bar-fill" style="width:45.3%;background:#ff9800;"><span class="inner-label">11,617万 / 25,653万</span></div>
-          <div class="annual-bar-timeline" style="left:57.8%;"></div>
-          <div class="annual-bar-timeline-label" style="left:57.8%;transform:translateX(-50%);">时间进度 57.8%</div>
+        <div class="annual-bar-track"><div class="annual-bar-fill" style="width:48.3%;background:#ff9800;"><span class="inner-label">12,401万 / 25,654万</span></div>
+          <div class="annual-bar-timeline" style="left:58.4%;"></div>
+          <div class="annual-bar-timeline-label" style="left:58.4%;transform:translateX(-50%);">时间进度 58.4%</div>
         </div>
-        <div class="annual-bar-pct orange">45.3%</div>
-        <div class="annual-bar-delta negative">-12.5pt ⚠️</div>
+        <div class="annual-bar-pct orange">48.3%</div>
+        <div class="annual-bar-delta negative">-10.1pt ⚠️</div>
       </div>
       <div class="annual-bar-item">
         <div class="annual-bar-name" style="color:#1565c0;">伍文聪</div>
-        <div class="annual-bar-track">
-          <div class="annual-bar-fill" style="width:46.8%;background:#1565c0;"><span class="inner-label">呼吸 8404.5万 / 17,972万</span></div>
-          <div class="annual-bar-timeline" style="left:57.8%;"></div>
+        <div class="annual-bar-track"><div class="annual-bar-fill" style="width:50.4%;background:#1565c0;"><span class="inner-label">9,053万 / 17,973万</span></div>
+          <div class="annual-bar-timeline" style="left:58.4%;"></div>
         </div>
-        <div class="annual-bar-pct orange">46.8%</div>
-        <div class="annual-bar-delta negative">-11.0pt</div>
+        <div class="annual-bar-pct orange">50.4%</div>
+        <div class="annual-bar-delta negative">-8.0pt ⚠️</div>
       </div>
       <div class="annual-bar-item">
         <div class="annual-bar-name" style="color:#6a1b9a;">陆晓冰</div>
-        <div class="annual-bar-track">
-          <div class="annual-bar-fill" style="width:43.5%;background:#6a1b9a;"><span class="inner-label">加权 307.8万 / 707.0万</span></div>
-          <div class="annual-bar-timeline" style="left:57.8%;"></div>
+        <div class="annual-bar-track"><div class="annual-bar-fill" style="width:45.0%;background:#6a1b9a;"><span class="inner-label">318万 / 707万</span></div>
+          <div class="annual-bar-timeline" style="left:58.4%;"></div>
         </div>
-        <div class="annual-bar-pct orange">43.5%</div>
-        <div class="annual-bar-delta negative">-14.3pt</div>
+        <div class="annual-bar-pct orange">45.0%</div>
+        <div class="annual-bar-delta negative">-13.4pt ⚠️</div>
       </div>
       <div class="annual-bar-item">
         <div class="annual-bar-name" style="color:#3949ab;">闵野</div>
-        <div class="annual-bar-track">
-          <div class="annual-bar-fill" style="width:41.3%;background:#3949ab;"><span class="inner-label">皮肤 1566.4万 / 3796.0万</span></div>
-          <div class="annual-bar-timeline" style="left:57.8%;"></div>
+        <div class="annual-bar-track"><div class="annual-bar-fill" style="width:43.4%;background:#3949ab;"><span class="inner-label">1,649万 / 3,796万</span></div>
+          <div class="annual-bar-timeline" style="left:58.4%;"></div>
         </div>
-        <div class="annual-bar-pct orange">41.3%</div>
-        <div class="annual-bar-delta negative">-16.5pt</div>
+        <div class="annual-bar-pct orange">43.4%</div>
+        <div class="annual-bar-delta negative">-15.0pt ⚠️</div>
       </div>
       <div class="annual-bar-item">
         <div class="annual-bar-name" style="color:#c62828;">戴家卫</div>
-        <div class="annual-bar-track">
-          <div class="annual-bar-fill" style="width:33.9%;background:#c62828;"><span class="inner-label">加权 799.7万 / 2361.9万</span></div>
-          <div class="annual-bar-timeline" style="left:57.8%;"></div>
+        <div class="annual-bar-track"><div class="annual-bar-fill" style="width:35.0%;background:#c62828;"><span class="inner-label">826万 / 2,362万</span></div>
+          <div class="annual-bar-timeline" style="left:58.4%;"></div>
         </div>
-        <div class="annual-bar-pct orange">33.9%</div>
-        <div class="annual-bar-delta negative">-24.0pt ❌</div>
+        <div class="annual-bar-pct orange">35.0%</div>
+        <div class="annual-bar-delta negative">-23.4pt ❌</div>
       </div>
       <div class="annual-bar-item">
         <div class="annual-bar-name" style="color:#2e7d32;">卢尧</div>
-        <div class="annual-bar-track">
-          <div class="annual-bar-fill" style="width:41.4%;background:#2e7d32;"><span class="inner-label">加权 539.5万 / 1301.9万</span></div>
-          <div class="annual-bar-timeline" style="left:57.8%;"></div>
+        <div class="annual-bar-track"><div class="annual-bar-fill" style="width:42.7%;background:#2e7d32;"><span class="inner-label">556万 / 1,302万</span></div>
+          <div class="annual-bar-timeline" style="left:58.4%;"></div>
         </div>
-        <div class="annual-bar-pct orange">41.4%</div>
-        <div class="annual-bar-delta negative">-16.4pt</div>
+        <div class="annual-bar-pct orange">42.7%</div>
+        <div class="annual-bar-delta negative">-15.7pt ❌</div>
       </div>
     </div>
   </div>
@@ -264,210 +245,259 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 
 <!-- 当周完成情况 -->
 <div class="section">
-  <div class="section-title"><span class="dot" style="background:#e91e63"></span>📅 当周完成情况（7月第5周）</div>
+  <div class="section-title"><span class="dot" style="background:#e91e63"></span>📅 当周完成情况（第31周）</div>
   <div class="weekly-wrap">
-    <!-- 左：周汇总 -->
     <div class="weekly-summary">
-      <div class="weekly-amount" style="color:#ff9800;">¥473.7万</div>
-      <div class="weekly-label">本周总动销（9品类合计）</div>
+      <div class="weekly-amount" style="color:#2e7d32;">¥820万</div>
+      <div class="weekly-label">第31周总动销（9品类合计）</div>
       <div class="weekly-meta">
-        <span class="weekly-tag orange">周均目标 ¥560.6万</span>
-        <span class="weekly-tag green">完成率 84.5%</span>
+        <span class="weekly-tag orange">周均目标 ¥561万</span>
+        <span class="weekly-tag green">完成率 146.2%</span>
       </div>
       <div class="weekly-progress-bar">
-        <div class="weekly-progress-fill" style="width:84.5%;background:linear-gradient(90deg,#ff9800,#ffb74d);"></div>
+        <div class="weekly-progress-fill" style="width:100%;background:linear-gradient(90deg,#ff9800,#ffb74d);"></div>
       </div>
-      <div class="weekly-hint">缺口 ¥86.9万 | 维矿物质(177.3%)达标</div>
+      <div class="weekly-hint">超额 ¥259万</div>
     </div>
-<!-- 中：重点品类拆解 -->
-        <div class="weekly-lines">
+    <div class="weekly-lines">
       <div class="wl-card blue">
         <div class="wl-name">呼吸</div>
-        <div class="wl-amount" style="color:#1565c0;">¥319.8万</div>
-        <div class="wl-bar"><div class="wl-fill" style="width:92.5%;background:#1565c0;"></div></div>
-        <div class="wl-pct">周完成率 92.5% </div>
-        <div class="wl-delta down">目标 ¥345.6万</div>
-      </div>
-      <div class="wl-card indigo">
-        <div class="wl-name">皮肤</div>
-        <div class="wl-amount" style="color:#3949ab;">¥64.9万</div>
-        <div class="wl-bar"><div class="wl-fill" style="width:89.0%;background:#3949ab;"></div></div>
-        <div class="wl-pct">周完成率 89.0% </div>
-        <div class="wl-delta down">目标 ¥73.0万</div>
+        <div class="wl-amount" style="color:#1565c0;">¥649万</div>
+        <div class="wl-bar"><div class="wl-fill" style="width:79%;background:#1565c0;"></div></div>
+        <div class="wl-pct">占比 79.2%</div>
+        <div class="wl-delta up">周完成率 187.7%</div>
       </div>
       <div class="wl-card orange">
-        <div class="wl-name">维矿物质</div>
-        <div class="wl-amount" style="color:#ff9800;">¥16.4万</div>
-        <div class="wl-bar"><div class="wl-fill" style="width:100%;background:#ff9800;"></div></div>
-        <div class="wl-pct">周完成率 177.3% ✅</div>
-        <div class="wl-delta up">目标 ¥9.3万</div>
+        <div class="wl-name">皮肤</div>
+        <div class="wl-amount" style="color:#3949ab;">¥83万</div>
+        <div class="wl-bar"><div class="wl-fill" style="width:10%;background:#3949ab;"></div></div>
+        <div class="wl-pct">占比 10.1%</div>
+        <div class="wl-delta up">周完成率 113.3%</div>
+      </div>
+      <div class="wl-card green">
+        <div class="wl-name">肠胃用药</div>
+        <div class="wl-amount" style="color:#2e7d32;">¥25万</div>
+        <div class="wl-bar"><div class="wl-fill" style="width:3%;background:#2e7d32;"></div></div>
+        <div class="wl-pct">占比 3.0%</div>
+        <div class="wl-delta down">周完成率 64.1%</div>
       </div>
       <div class="wl-card purple">
-        <div class="wl-name">益血生</div>
-        <div class="wl-amount" style="color:#6a1b9a;">¥34.6万</div>
-        <div class="wl-bar"><div class="wl-fill" style="width:51.5%;background:#6a1b9a;"></div></div>
-        <div class="wl-pct">周完成率 51.5%</div>
-        <div class="wl-delta down">目标 ¥67.3万</div>
+        <div class="wl-name">维矿物质</div>
+        <div class="wl-amount" style="color:#1a237e;">¥11万</div>
+        <div class="wl-bar"><div class="wl-fill" style="width:1%;background:#1a237e;"></div></div>
+        <div class="wl-pct">占比 1.3%</div>
+        <div class="wl-delta up">周完成率 117.5%</div>
       </div>
     </div>
-    </div>
-<!-- 右：饼图 -->
     <div class="weekly-chart">
       <canvas id="weeklyDonut"></canvas>
     </div>
   </div>
 </div>
 
-<!-- 当周各品类周完成率 -->
+<!-- 本周变动摘要 -->
 <div class="section">
-  <div class="section-title"><span class="dot" style="background:#ff9800"></span>各品类周完成率（上周动销 vs 周均目标）</div>
-  <div class="chart-card">
-    <div class="chart-wrap"><canvas id="weeklyChart"></canvas></div>
+  <div class="section-title"><span class="dot" style="background:#4caf50"></span>本周变动摘要（vs 上周）· 带着问题看数据</div>
+  <div class="charts-row">
+    <div class="chart-card" style="grid-column: span 2;">
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr style="border-bottom:2px solid #eceff1;">
+            <th style="text-align:left;padding:8px;font-size:13px;">指标</th>
+            <th style="text-align:right;padding:8px;font-size:13px;">上周</th>
+            <th style="text-align:right;padding:8px;font-size:13px;">本周</th>
+            <th style="text-align:center;padding:8px;font-size:13px;">变动</th>
+            <th style="text-align:left;padding:8px;font-size:13px;">判断</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f5f5f5;">
+            <td style="padding:8px;font-weight:700;">年度时间进度</td>
+            <td style="padding:8px;text-align:right;">56.5%</td>
+            <td style="padding:8px;text-align:right;"><b>58.4%</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">+1.9pt</td>
+            <td style="padding:8px;color:#78909c;font-size:12px;">时间自然推进</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f5f5f5;">
+            <td style="padding:8px;font-weight:700;">整体动销进度</td>
+            <td style="padding:8px;text-align:right;">45.3%</td>
+            <td style="padding:8px;text-align:right;"><b style="color:#ff9800;">48.3%</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">+3.0pt</td>
+            <td style="padding:8px;color:#ff9800;font-size:12px;">追赶加速，但仍落后时间进度 ⚠️</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f5f5f5;">
+            <td style="padding:8px;font-weight:700;">年度缺口</td>
+            <td style="padding:8px;text-align:right;">¥3,212万</td>
+            <td style="padding:8px;text-align:right;"><b style="color:#c62828;">¥2,580万</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">缩小 ¥631万</td>
+            <td style="padding:8px;color:#2e7d32;font-size:12px;">本周超预期，缺口大幅收窄 ✅</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f5f5f5;background:#e8f5e9;">
+            <td style="padding:8px;font-weight:700;">本周动销额</td>
+            <td style="padding:8px;text-align:right;">¥474万</td>
+            <td style="padding:8px;text-align:right;"><b style="color:#2e7d32;">¥820万</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">+72.9%</td>
+            <td style="padding:8px;color:#2e7d32;font-size:12px;">呼吸大爆发拉动，周目标达成146%</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f5f5f5;">
+            <td style="padding:8px;font-weight:700;">呼吸年度进度</td>
+            <td style="padding:8px;text-align:right;">46.8%</td>
+            <td style="padding:8px;text-align:right;"><b style="color:#ff9800;">50.4%</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">+3.6pt</td>
+            <td style="padding:8px;color:#2e7d32;font-size:12px;">追赶效果显著</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f5f5f5;">
+            <td style="padding:8px;font-weight:700;">妇科用药年度进度</td>
+            <td style="padding:8px;text-align:right;">66.3%</td>
+            <td style="padding:8px;text-align:right;"><b style="color:#2e7d32;">67.1%</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">+0.8pt</td>
+            <td style="padding:8px;color:#2e7d32;font-size:12px;">唯一持续领跑品类 💪</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;font-weight:700;">处方药年度进度</td>
+            <td style="padding:8px;text-align:right;">13.3%</td>
+            <td style="padding:8px;text-align:right;"><b style="color:#c62828;">13.6%</b></td>
+            <td style="padding:8px;text-align:center;color:#2e7d32;font-weight:700;">+0.3pt</td>
+            <td style="padding:8px;color:#c62828;font-size:12px;">仍为最严重短板，周动销仅1.2万</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-
-<!-- 核心发现 -->
-<div class="insight-box">
-  <strong>📌 核心发现：</strong>截止 7月30日，全年已过 <strong>57.8%</strong>，整体动销进度 <strong>45.3%</strong>，落后时间进度 <strong>12.5pp</strong>。<br>
-  9 个品类中仅 <strong>妇科用药（66.3%）</strong> 跑赢时间进度；同比整体增长 <strong>+9.7%</strong>，其中呼吸（+21.5%）、处方药（+13.4%）增长强劲，但维矿物质（-50.5%）、妇科用药（-27.4%）同比下滑明显。<br>
-  <strong>处方药（13.3%）</strong> 进度严重滞后、<strong>戴家卫</strong> 加权小计 33.9%（负责人最低），需重点关注。
-</div>
 </div>
 
 <!-- KPI Cards -->
 <div class="kpi-row">
   <div class="kpi-card blue">
-    <div class="kpi-label">整体动销进度</div>
-    <div class="kpi-value">45.3%</div>
-    <div class="kpi-sub">落后时间进度(57.8%) 12.5pp</div>
-    <div class="kpi-delta down">追赶中 ⚠️</div>
+    <div class="kpi-label">年度目标总额（8主表）</div>
+    <div class="kpi-value">¥2.57亿</div>
+    <div class="kpi-sub">8品类合计 + 益血生单独3,500万 = ¥2.96亿</div>
   </div>
   <div class="kpi-card green">
-    <div class="kpi-label">累计动销总额</div>
-    <div class="kpi-value">11,617<span style="font-size:18px">万</span></div>
-    <div class="kpi-sub">年目标 25,653万 | 去年同期 10,590万</div>
+    <div class="kpi-label">年度实际完成</div>
+    <div class="kpi-value">¥1.240亿</div>
+    <div class="kpi-sub">年度进度 48.3%（上周 45.3%，+3.0pt）</div>
+    <div class="kpi-delta up">追赶中 ↑</div>
   </div>
   <div class="kpi-card orange">
-    <div class="kpi-label">累计同比</div>
-    <div class="kpi-value">+9.7%</div>
-    <div class="kpi-sub">净增 +1027.3万（去年 10,590万）</div>
+    <div class="kpi-label">累计同比增长</div>
+    <div class="kpi-value">+13.8%</div>
+    <div class="kpi-sub">净增 +1,499万（去年 10,902万）</div>
     <div class="kpi-delta up">↑ 增长</div>
   </div>
   <div class="kpi-card red">
-    <div class="kpi-label">时间进度缺口</div>
-    <div class="kpi-value">3212.5<span style="font-size:18px">万</span></div>
-    <div class="kpi-sub">按时间应达 14,830万 | 落后 12.5pp</div>
+    <div class="kpi-label">年度缺口估算</div>
+    <div class="kpi-value">¥2,580万</div>
+    <div class="kpi-sub">按时间应达 58.4% × 2.57亿 = ¥14,982万</div>
   </div>
 </div>
 
-<!-- 品类进度总览 line-cards -->
+<!-- 品类进度总览 -->
 <div class="section">
   <div class="section-title"><span class="dot" style="background:#1a237e"></span>九大品类进度总览</div>
-  <div class="charts-row-4">
-    <div class="line-card blue-top">
-      <div class="line-name">呼吸 <span style="font-size:11px;color:#90a4ae">伍文聪</span></div>
-      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">17,972万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">8404.5万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">46.8% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+21.5%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-11.0pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:46.8%;background:#1565c0;"></div></div>
-    </div>
-    <div class="line-card green-top">
-      <div class="line-name">妇科用药 <span style="font-size:11px;color:#90a4ae">陆晓冰</span></div>
-      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">20.8万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">13.8万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val green">66.3% ✅</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-27.4%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val green">+8.5pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:66.3%;background:#4caf50;"></div></div>
-    </div>
-    <div class="line-card orange-top">
-      <div class="line-name">风湿骨痛 <span style="font-size:11px;color:#90a4ae">陆晓冰</span></div>
-      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">686.2万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">294.0万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">42.8% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-25.0%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-15.0pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:42.8%;background:#ff9800;"></div></div>
-    </div>
-    <div class="line-card purple-top">
-      <div class="line-name">益血生 <span style="font-size:11px;color:#90a4ae">陆晓冰-新</span></div>
-      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">3500.0万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">1403.4万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">40.1% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+56.5%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-17.7pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:40.1%;background:#6a1b9a;"></div></div>
-    </div>
-    <div class="line-card indigo-top">
-      <div class="line-name">皮肤 <span style="font-size:11px;color:#90a4ae">闵野</span></div>
-      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">3796.0万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">1566.4万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">41.3% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-8.2%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-16.5pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:41.3%;background:#3949ab;"></div></div>
-    </div>
-    <div class="line-card navy-top">
-      <div class="line-name">肠胃用药 <span style="font-size:11px;color:#90a4ae">戴家卫</span></div>
-      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">1996.9万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">751.1万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">37.6% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+10.9%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-20.2pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:37.6%;background:#1a237e;"></div></div>
-    </div>
-    <div class="line-card red-top">
-      <div class="line-name">处方药 <span style="font-size:11px;color:#90a4ae">戴家卫</span></div>
+  <div class="charts-row-3">
+    <div class="line-card" style="border-top-color:#c62828;">
+      <div class="line-name">处方药 <span style="font-size:11px;color:#90a4ae;">戴家卫</span></div>
       <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">365.0万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">48.6万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val red">13.3% ❌</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+13.4%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val red">-44.5pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:13.3%;background:#c62828;"></div></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">49.8万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val red">13.6% ❌</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+12.9%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val red">-44.8pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:13.6%;background:#c62828;"></div></div>
     </div>
-    <div class="line-card teal-top">
-      <div class="line-name">小儿感冒 <span style="font-size:11px;color:#90a4ae">卢尧</span></div>
+    <div class="line-card" style="border-top-color:#1a237e;">
+      <div class="line-name">肠胃用药 <span style="font-size:11px;color:#90a4ae;">戴家卫</span></div>
+      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">1,996.9万</span></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">775.7万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val red">38.8% ❌</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+11.1%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val red">-19.6pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:38.8%;background:#1a237e;"></div></div>
+    </div>
+    <div class="line-card" style="border-top-color:#00838f;">
+      <div class="line-name">小儿感冒 <span style="font-size:11px;color:#90a4ae;">卢尧</span></div>
       <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">820.6万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">313.9万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">38.3% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-17.3%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-19.5pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:38.3%;background:#00838f;"></div></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">319.1万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val red">38.9% ❌</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-17.2%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val red">-19.5pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:38.9%;background:#00838f;"></div></div>
     </div>
-    <div class="line-card orange-top">
-      <div class="line-name">维矿物质 <span style="font-size:11px;color:#90a4ae">卢尧</span></div>
+    <div class="line-card" style="border-top-color:#2e7d32;">
+      <div class="line-name">益血生 <span style="font-size:11px;color:#90a4ae;">陆晓冰-新</span></div>
+      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">3,500.0万</span></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">1,439.5万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val red">41.1% ❌</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+48.6%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val red">-17.3pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:41.1%;background:#2e7d32;"></div></div>
+    </div>
+    <div class="line-card" style="border-top-color:#3949ab;">
+      <div class="line-name">皮肤 <span style="font-size:11px;color:#90a4ae;">闵野</span></div>
+      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">3,796.0万</span></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">1,649.0万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">43.4% ⚠️</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-7.2%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-15.0pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:43.4%;background:#3949ab;"></div></div>
+    </div>
+    <div class="line-card" style="border-top-color:#6a1b9a;">
+      <div class="line-name">风湿骨痛 <span style="font-size:11px;color:#90a4ae;">陆晓冰</span></div>
+      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">686.2万</span></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">303.9万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">44.3% ⚠️</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-23.9%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-14.1pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:44.3%;background:#6a1b9a;"></div></div>
+    </div>
+    <div class="line-card" style="border-top-color:#ff9800;">
+      <div class="line-name">维矿物质 <span style="font-size:11px;color:#90a4ae;">卢尧</span></div>
       <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">481.3万</span></div>
-      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">225.6万</span></div>
-      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">46.9% ⚠️</span></div>
-      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-50.5%</span></div>
-      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-10.9pt</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:46.9%;background:#ff9800;"></div></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">236.4万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">49.1% ⚠️</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-53.3%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-9.3pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:49.1%;background:#ff9800;"></div></div>
+    </div>
+    <div class="line-card" style="border-top-color:#1565c0;">
+      <div class="line-name">呼吸 <span style="font-size:11px;color:#90a4ae;">伍文聪</span></div>
+      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">17,972.6万</span></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">9,053.4万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val orange">50.4% ⚠️</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val green">+28.0%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val orange">-8.0pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:50.4%;background:#1565c0;"></div></div>
+    </div>
+    <div class="line-card" style="border-top-color:#4caf50;">
+      <div class="line-name">妇科用药 <span style="font-size:11px;color:#90a4ae;">陆晓冰</span></div>
+      <div class="line-row"><span class="line-label">年度目标</span><span class="line-val">20.8万</span></div>
+      <div class="line-row"><span class="line-label">年度实际</span><span class="line-val">13.9万</span></div>
+      <div class="line-row"><span class="line-label">年度进度</span><span class="line-val green">67.1% ✅</span></div>
+      <div class="line-row"><span class="line-label">累计同比</span><span class="line-val red">-28.2%</span></div>
+      <div class="line-row"><span class="line-label">进度差</span><span class="line-val green">+8.7pt</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:67.1%;background:#4caf50;"></div></div>
     </div>
   </div>
 </div>
 
-</div>
-
-<!-- Charts Row 1: 负责人加权 + 品类进度 -->
+<!-- 进度对标分析 -->
 <div class="section">
   <div class="section-title"><span class="dot" style="background:#1a237e"></span>进度对标分析</div>
   <div class="charts-row">
     <div class="chart-card">
-      <h3>各负责人加权进度 vs 时间进度 57.8%</h3>
-      <div class="chart-wrap"><canvas id="personChart"></canvas></div>
+      <h3>各负责人加权进度 vs 时间进度 58.4%</h3>
+      <div class="chart-wrap"><canvas id="ownerChart"></canvas></div>
     </div>
     <div class="chart-card">
-      <h3>各品类完成进度对标（横向）</h3>
-      <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
+      <h3>各品类年度完成率 vs 时间进度 58.4%</h3>
+      <div class="chart-wrap"><canvas id="catRateChart"></canvas></div>
     </div>
   </div>
 </div>
 
-<!-- Charts Row 2: 同比 -->
+<!-- 同比增长分析 -->
 <div class="section">
-  <div class="section-title"><span class="dot" style="background:#4caf50"></span>品类同比增长分析</div>
+  <div class="section-title"><span class="dot" style="background:#4caf50"></span>品类同比增长与金额结构</div>
   <div class="charts-row">
     <div class="chart-card">
       <h3>各品类累计同比增长率（%）</h3>
@@ -480,6 +510,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   </div>
 </div>
 
+<!-- 品类深度分析 & 情景推演 -->
+<div class="section">
+  <div class="section-title"><span class="dot" style="background:#ff9800"></span>品类深度分析 & 情景推演</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>各品类周完成率 vs 100%达标线</h3>
+      <div class="chart-wrap"><canvas id="weeklyChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>下半年三种情景推演（基于当前48.3%）</h3>
+      <div class="chart-wrap"><canvas id="scenarioChart"></canvas></div>
+    </div>
+  </div>
+</div>
+
 <!-- Risk Table -->
 <div class="risk-table-wrap">
   <div class="section-title"><span class="dot" style="background:#c62828"></span>风险预警清单</div>
@@ -487,280 +532,251 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
     <thead>
       <tr><th>品类 / 负责人</th><th>年度进度</th><th>累计同比</th><th>风险等级</th><th>风险描述</th></tr>
     </thead>
-    <tbody>
-  <tr><td>处方药</td><td><b>13.3%</b></td><td>+13.4%</td><td><span class="badge red">极高</span></td><td>年度严重滞后 -44.5pt，九大品类进度最弱</td></tr>
-  <tr><td>戴家卫（加权小计）</td><td><b>33.9%</b></td><td>+11.1%</td><td><span class="badge red">极高</span></td><td>负责人加权进度最低 -24.0pt，肠胃+处方双拖累</td></tr>
-  <tr><td>肠胃用药</td><td><b>37.6%</b></td><td>+10.9%</td><td><span class="badge orange">高</span></td><td>进度与同比双弱，落后时间进度 -20.2pt</td></tr>
-  <tr><td>小儿感冒</td><td>38.3%</td><td>-17.3%</td><td><span class="badge orange">高</span></td><td>进度与同比双弱，落后时间进度 -19.5pt</td></tr>
-  <tr><td>皮肤</td><td>41.3%</td><td>-8.2%</td><td><span class="badge orange">高</span></td><td>进度与同比双弱，落后时间进度 -16.5pt</td></tr>
-  <tr><td>卢尧（加权小计）</td><td><b>41.4%</b></td><td>-35.4%</td><td><span class="badge orange">高</span></td><td>负责人加权进度最低 -16.4pt，小儿+维矿均走弱</td></tr>
-  <tr><td>风湿骨痛</td><td>42.8%</td><td>-25.0%</td><td><span class="badge orange">高</span></td><td>进度落后，落后时间进度 -15.0pt</td></tr>
+    <tbody><tr><td>处方药</td><td><b>13.6%</b></td><td>+12.9%</td><td><span class="badge red">极高</span></td><td>年度严重滞后 -44.8pt，九大品类进度最弱</td></tr>
+<tr><td>戴家卫（加权小计）</td><td><b>35.0%</b></td><td>+11.2%</td><td><span class="badge red">极高</span></td><td>负责人加权进度最低 -23.4pt，肠胃+处方双拖累</td></tr>
+<tr><td>肠胃用药</td><td><b>38.8%</b></td><td>+11.1%</td><td><span class="badge orange">高</span></td><td>进度与同比双弱，落后时间进度 -19.6pt</td></tr>
+<tr><td>小儿感冒</td><td><b>38.9%</b></td><td>-17.2%</td><td><span class="badge orange">高</span></td><td>进度与同比双弱，落后时间进度 -19.5pt</td></tr>
+<tr><td>皮肤</td><td><b>43.4%</b></td><td>-7.2%</td><td><span class="badge orange">高</span></td><td>进度与同比双弱，落后时间进度 -15.0pt</td></tr>
+<tr><td>卢尧（加权小计）</td><td><b>42.7%</b></td><td>-37.7%</td><td><span class="badge orange">高</span></td><td>负责人加权进度低 -15.7pt，小儿+维矿均走弱</td></tr>
+<tr><td>风湿骨痛</td><td><b>44.3%</b></td><td>-23.9%</td><td><span class="badge orange">高</span></td><td>进度落后，落后时间进度 -14.1pt</td></tr>
+
 </tbody>
   </table>
 </div>
 
-
-<div class="footer">阿里平台电商业务看板 | 数据来源：电商运营部（Y26POA-王鹏-动销V7） | 更新于 2026-07-30（第31周） | 仅供参考</div>
+<div class="footer">阿里平台电商业务看板 | 数据来源：电商运营部（Y26POA-王鹏-动销V7） | 更新于 2026-08-03（第31周） | 仅供参考</div>
 
 <script>
 Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif";
 Chart.defaults.font.size = 11;
 Chart.defaults.color = '#546e7a';
 Chart.register(ChartDataLabels);
+const TP = 58.4;
 
-const C = {
-  cunliang: '#1565c0', erhua: '#e65100', yixuesheng: '#2e7d32', fuhua: '#6a1b9a',
-  indigo: '#3949ab', navy: '#1a237e', red: '#c62828', orange: '#ff9800', green: '#4caf50', gray: '#78909c', teal: '#00838f'
-};
-const TIME_PROGRESS = 54.52;
+const colors = ['#1565c0','#4caf50','#3949ab','#1a237e','#c62828','#00838f','#ff9800','#6a1b9a','#2e7d32'];
+const catNames = ['处方药','肠胃用药','小儿感冒','益血生','皮肤','风湿骨痛','维矿物质','呼吸','妇科用药'];
+const catRates = [13.6,38.8,38.9,41.1,43.4,44.3,49.1,50.4,67.1];
+const catColors = ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'];
 
-// ====== 1. 负责人加权进度 ======
-new Chart(document.getElementById('personChart'), {
+// ====== 1. Owner weighted ======
+new Chart(document.getElementById('ownerChart'), {
   type: 'bar',
   data: {
-    labels: ['伍文聪', '陆晓冰', '闵野', '戴家卫', '卢尧'],
+    labels: ['伍文聪','陆晓冰','闵野','戴家卫','卢尧'],
     datasets: [{
       label: '加权实际进度（%）',
-      data: [46.8, 43.5, 41.3, 33.9, 41.4],
-      backgroundColor: [C.cunliang, C.fuhua, C.indigo, C.red, C.yixuesheng],
-      borderRadius: 6,
-      barPercentage: 0.55,
+      data: [50.4,45.0,43.4,35.0,42.7],
+      backgroundColor: ['#1565c0','#6a1b9a','#3949ab','#c62828','#2e7d32'],
+      borderRadius: 6, barPercentage: 0.55,
     }, {
-      label: '时间进度 57.8%',
-      data: Array(5).fill(TIME_PROGRESS),
-      type: 'line',
-      borderColor: '#c62828',
-      borderDash: [6, 3],
-      borderWidth: 2,
-      pointRadius: 0,
-      fill: false,
+      label: '时间进度 58.4%',
+      data: Array(5).fill(TP),
+      type: 'line', borderColor: '#c62828', borderDash: [6, 3], borderWidth: 2, pointRadius: 0, fill: false,
     }]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      datalabels: {
-        display: ctx => ctx.datasetIndex === 0,
-        anchor: 'end', align: 'top',
-        font: { size: 13, weight: 'bold' },
-        color: ctx => ctx.raw >= TIME_PROGRESS ? C.green : C.orange,
-        formatter: v => v + '%'
-      },
-      legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 12 } }
+      datalabels: { display: ctx => ctx.datasetIndex === 0, anchor: 'end', align: 'top', font: {size:13,weight:'bold'},
+        color: ctx => ctx.raw >= TP ? '#2e7d32' : '#e65100', formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
     },
-    scales: { y: { beginAtZero: true, max: 65, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
+    scales: { y: { beginAtZero: true, max: 70, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
   }
 });
 
-// ====== 2. 品类进度对标（横向） ======
-new Chart(document.getElementById('categoryChart'), {
+// ====== 2. Category rate horizontal bar ======
+new Chart(document.getElementById('catRateChart'), {
   type: 'bar',
   data: {
-    labels: ['呼吸', '妇科用药', '风湿骨痛', '益血生', '皮肤', '肠胃用药', '处方药', '小儿感冒', '维矿物质'],
+    labels: catNames,
     datasets: [{
       label: '年度完成率',
-      data: [46.8, 66.3, 42.8, 40.1, 41.3, 37.6, 13.3, 38.3, 46.9],
-      backgroundColor: ['#1565c0', '#4caf50', '#ff9800', '#6a1b9a', '#3949ab', '#1a237e', '#c62828', '#00838f', '#ff9800'],
-      borderRadius: 6,
-      barPercentage: 0.55,
+      data: catRates,
+      backgroundColor: ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'],
+      borderRadius: 6, barPercentage: 0.55,
     }, {
-      label: '时间进度 57.8%',
-      data: Array(9).fill(TIME_PROGRESS),
-      type: 'line',
-      borderColor: '#c62828',
-      borderDash: [6, 3],
-      borderWidth: 2,
-      pointRadius: 0,
-      fill: false,
+      label: '时间进度 58.4%',
+      data: Array(9).fill(TP),
+      type: 'line', borderColor: '#c62828', borderDash: [6,3], borderWidth: 2, pointRadius: 0, fill: false,
     }]
   },
   options: {
     indexAxis: 'y',
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      datalabels: {
-        display: ctx => ctx.datasetIndex === 0,
-        anchor: 'end', align: 'center',
-        font: { size: 12, weight: 'bold' },
-        color: '#fff',
-        formatter: v => v + '%'
-      },
-      legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 12 } }
+      datalabels: { display: ctx => ctx.datasetIndex === 0, anchor: 'end', align: 'center', font: {size:12,weight:'bold'},
+        color: '#fff', formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
     },
-    scales: {
-      x: { beginAtZero: true, max: 70, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } },
-      y: { grid: { display: false } }
-    }
+    scales: { x: { beginAtZero: true, max: 75, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   }
 });
 
-// ====== 3. 同比增长率 ======
+// ====== 3. YoY ======
 new Chart(document.getElementById('yoyChart'), {
   type: 'bar',
   data: {
-    labels: ['维矿物质', '妇科用药', '风湿骨痛', '小儿感冒', '皮肤', '肠胃用药', '处方药', '呼吸', '益血生'],
+    labels: ['维矿物质','妇科用药','风湿骨痛','小儿感冒','皮肤','肠胃用药','处方药','呼吸','益血生'],
     datasets: [{
       label: '累计同比增长率',
-      data: [-50.5, -27.4, -25.0, -17.3, -8.2, 10.9, 13.4, 21.5, 56.5],
-      backgroundColor: ctx => ctx.raw >= 0 ? C.green : C.red,
-      borderRadius: 6,
-      barPercentage: 0.5,
+      data: [-53.3,-28.2,-23.9,-17.2,-7.2,11.1,12.9,28.0,48.6],
+      backgroundColor: ctx => ctx.raw >= 0 ? '#4caf50' : '#c62828',
+      borderRadius: 6, barPercentage: 0.5,
     }]
   },
   options: {
     indexAxis: 'y',
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      datalabels: {
-        anchor: ctx => ctx.raw >= 0 ? 'end' : 'start',
-        align: ctx => ctx.raw >= 0 ? 'top' : 'bottom',
-        font: { size: 12, weight: 'bold' },
-        color: ctx => ctx.raw >= 0 ? C.green : C.red,
-        formatter: v => (v >= 0 ? '+' : '') + v + '%'
-      },
+      datalabels: { anchor: ctx => ctx.raw >= 0 ? 'end' : 'start', align: ctx => ctx.raw >= 0 ? 'top' : 'bottom',
+        font: {size:12,weight:'bold'}, color: ctx => ctx.raw >= 0 ? '#2e7d32' : '#c62828',
+        formatter: v => (v>=0?'+':'') + v + '%' },
       legend: { display: false }
     },
-    scales: {
-      x: { min: -50, max: 80, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } },
-      y: { grid: { display: false } }
-    }
+    scales: { x: { min: -60, max: 80, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   },
   plugins: [{
     id: 'zeroLine',
-    afterDraw: function (chart) {
-      const ctx = chart.ctx;
-      const xScale = chart.scales.x, yScale = chart.scales.y;
+    afterDraw: function(chart) {
+      const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y;
       const x = xScale.getPixelForValue(0);
-      ctx.save();
-      ctx.beginPath();
-      ctx.strokeStyle = C.gray;
-      ctx.lineWidth = 1.5;
+      ctx.save(); ctx.beginPath(); ctx.strokeStyle = '#78909c'; ctx.lineWidth = 1.5;
       ctx.moveTo(x, yScale.top); ctx.lineTo(x, yScale.bottom); ctx.stroke();
-      ctx.fillStyle = C.gray; ctx.font = '11px -apple-system, sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText('持平线', x, yScale.top - 2);
-      ctx.restore();
+      ctx.fillStyle = '#78909c'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText('持平线', x, yScale.top - 2); ctx.restore();
     }
   }]
 });
 
-// ====== 4. 金额结构（目标 vs 实际） ======
+// ====== 4. Amount structure ======
 new Chart(document.getElementById('amountChart'), {
   type: 'bar',
   data: {
-    labels: ['呼吸', '皮肤', '益血生', '肠胃', '小儿', '维矿', '风湿', '处方', '妇科'],
+    labels: ['呼吸','妇科用药','皮肤','肠胃用药','处方药','小儿感冒','维矿物质','风湿骨痛','益血生'],
     datasets: [{
       label: '年度目标',
-      data: [17972.6, 3796.0, 3500.0, 1996.9, 820.6, 481.3, 686.2, 365.0, 20.8],
-      backgroundColor: 'rgba(21,101,192,0.15)',
-      borderColor: '#1565c0',
-      borderWidth: 1.5,
-      borderRadius: 6,
-      barPercentage: 0.5,
+      data: [17972.6,20.8,3796.0,1996.9,365.0,820.6,481.3,686.2,3500.0],
+      backgroundColor: 'rgba(21,101,192,0.15)', borderColor: '#1565c0', borderWidth: 1.5, borderRadius: 6, barPercentage: 0.5,
     }, {
       label: '当前实际',
-      data: [8404.5, 1566.4, 1403.4, 751.1, 313.9, 225.6, 294.0, 48.6, 13.8],
-      backgroundColor: '#3949ab',
-      borderRadius: 6,
-      barPercentage: 0.5,
+      data: [9053.4,13.9,1649.0,775.7,49.8,319.1,236.4,303.9,1439.5],
+      backgroundColor: '#3949ab', borderRadius: 6, barPercentage: 0.5,
     }]
   },
   options: {
     indexAxis: 'y',
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      datalabels: {
-        display: ctx => ctx.datasetIndex === 1,
-        anchor: 'end', align: 'end',
-        font: { size: 11, weight: 'bold' },
-        color: '#3949ab',
-        formatter: v => v.toLocaleString() + '万'
-      },
-      legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 12 } }
+      datalabels: { display: ctx => ctx.datasetIndex === 1, anchor: 'end', align: 'end', font: {size:11,weight:'bold'},
+        color: '#3949ab', formatter: v => v.toLocaleString() + '万' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
     },
-    scales: { x: { beginAtZero: true, ticks: { callback: v => v >= 10000 ? (v / 10000) + '亿' : v + '万' }, grid: { color: '#eceff1' } }, y: { grid: { display: false } } }
+    scales: { x: { beginAtZero: true, ticks: {callback: v => v>=10000?(v/10000).toFixed(1)+'亿':v+'万'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   }
 });
 
-// ====== 5. 当周完成率 ======
+// ====== 5. Weekly completion ======
 new Chart(document.getElementById('weeklyChart'), {
   type: 'bar',
   data: {
-    labels: ['处方药', '妇科用药', '小儿感冒', '益血生', '肠胃用药', '风湿骨痛', '皮肤', '呼吸', '维矿物质'],
+    labels: ['处方药','小儿感冒','妇科用药','肠胃用药','风湿骨痛','皮肤','维矿物质','呼吸'],
     datasets: [{
       label: '周完成率',
-      data: [16.5, 39.7, 39.7, 51.5, 56.3, 66.0, 89.0, 92.5, 177.3],
-      backgroundColor: ctx => ctx.raw >= 100 ? C.green : ctx.raw >= 80 ? C.orange : C.red,
-      borderRadius: 6,
-      barPercentage: 0.6,
+      data: [16.5,33.0,40.1,64.1,75.1,113.3,117.5,187.7],
+      backgroundColor: ctx => ctx.raw >= 100 ? '#4caf50' : ctx.raw >= 80 ? '#ff9800' : '#c62828',
+      borderRadius: 6, barPercentage: 0.6,
     }]
   },
   options: {
     indexAxis: 'y',
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      datalabels: {
-        anchor: 'end', align: 'end',
-        font: { size: 12, weight: 'bold' },
-        color: ctx => ctx.raw >= 100 ? C.green : ctx.raw >= 80 ? C.orange : C.red,
-        formatter: v => v + '%'
-      },
+      datalabels: { anchor: 'end', align: 'end', font: {size:12,weight:'bold'},
+        color: ctx => ctx.raw >= 100 ? '#2e7d32' : ctx.raw >= 80 ? '#e65100' : '#c62828',
+        formatter: v => v + '%' },
       legend: { display: false }
     },
-    scales: { x: { beginAtZero: true, max: 120, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, y: { grid: { display: false } } }
+    scales: { x: { beginAtZero: true, max: 200, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   },
   plugins: [{
     id: 'weekTargetLine',
-    afterDraw: function (chart) {
-      const ctx = chart.ctx;
-      const xScale = chart.scales.x, yScale = chart.scales.y;
+    afterDraw: function(chart) {
+      const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y;
       const x = xScale.getPixelForValue(100);
-      ctx.save();
-      ctx.beginPath();
-      ctx.strokeStyle = C.green; ctx.lineWidth = 2.5; ctx.setLineDash([6, 4]);
+      ctx.save(); ctx.beginPath(); ctx.strokeStyle = '#4caf50'; ctx.lineWidth = 2.5; ctx.setLineDash([6, 4]);
       ctx.moveTo(x, yScale.top); ctx.lineTo(x, yScale.bottom); ctx.stroke();
       ctx.setLineDash([]);
-      ctx.fillStyle = C.green; ctx.font = 'bold 12px -apple-system, sans-serif'; ctx.textAlign = 'center';
+      ctx.fillStyle = '#4caf50'; ctx.font = 'bold 12px sans-serif'; ctx.textAlign = 'center';
       ctx.fillText('周达标线 100%', x, yScale.top - 8);
-      ctx.globalAlpha = 0.06; ctx.fillStyle = C.green;
-      ctx.fillRect(x, yScale.top, xScale.right - x, yScale.bottom - yScale.top);
-      ctx.globalAlpha = 0.04; ctx.fillStyle = C.red;
+      ctx.globalAlpha = 0.06; ctx.fillStyle = '#4caf50';
       ctx.fillRect(xScale.left, yScale.top, x - xScale.left, yScale.bottom - yScale.top);
+      ctx.globalAlpha = 0.04; ctx.fillStyle = '#c62828';
+      ctx.fillRect(x, yScale.top, xScale.right - x, yScale.bottom - yScale.top);
       ctx.restore();
     }
   }]
 });
 
-// ====== 6. 当周贡献占比饼图 ======
+// ====== 6. Scenario projection ======
+new Chart(document.getElementById('scenarioChart'), {
+  type: 'line',
+  data: {
+    labels: ['当前\n48.3%', 'Q3末', 'Q4末'],
+    datasets: [{
+      label: '乐观 ✅ (95-100%)',
+      data: [48.3, 73, 98],
+      borderColor: '#4caf50', backgroundColor: 'rgba(76,175,80,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#4caf50',
+    }, {
+      label: '中性 ⚖️ (88-92%)',
+      data: [48.3, 66, 89],
+      borderColor: '#ff9800', backgroundColor: 'rgba(255,152,0,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#ff9800',
+    }, {
+      label: '悲观 ❌ (78-82%)',
+      data: [48.3, 58, 80],
+      borderColor: '#f44336', backgroundColor: 'rgba(244,67,54,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#f44336',
+    }, {
+      label: '100% 目标线',
+      data: [100, 100, 100],
+      borderColor: '#90a4ae', borderDash: [8, 4], borderWidth: 1.5, pointRadius: 0, fill: false,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { display: ctx => ctx.dataIndex > 0, anchor: 'end', align: 'top', font: {size:11,weight:'bold'},
+        color: ctx => ctx.dataset.borderColor, formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, padding:12} }
+    },
+    scales: { y: { beginAtZero: true, max: 110, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
+  }
+});
+
+// ====== 7. Weekly Donut ======
 new Chart(document.getElementById('weeklyDonut'), {
   type: 'doughnut',
   data: {
-    labels: ['呼吸', '皮肤', '益血生', '肠胃用药', '风湿骨痛', '小儿感冒', '维矿物质', '处方药', '妇科用药'],
+    labels: ['呼吸','皮肤','肠胃用药','维矿物质','其他'],
     datasets: [{
-      data: [319.8, 64.9, 34.6, 21.6, 8.7, 6.3, 16.4, 1.2, 0.2],
-      backgroundColor: ['#1565c0', '#3949ab', '#6a1b9a', '#1a237e', '#ff9800', '#00838f', '#ffa726', '#c62828', '#4caf50'],
-      borderWidth: 2,
-      borderColor: '#fff',
+      data: [648.8,82.7,24.6,10.9,16.4],
+      backgroundColor: ['#1565c0','#3949ab','#1a237e','#ff9800','#b0bec5'],
+      borderWidth: 2, borderColor: '#fff',
     }]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     cutout: '62%',
     plugins: {
-      title: { display: true, text: '本周贡献占比', font: { size: 12, weight: '600' }, color: '#546e7a', padding: { bottom: 8 } },
-      datalabels: {
-        color: '#fff',
-        font: { size: 11, weight: 'bold' },
-        formatter: (v, ctx) => {
-          const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-          const pct = (v / total * 100).toFixed(1);
-          return pct > 3 ? pct + '%' : '';
-        }
-      },
-      legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 8, font: { size: 10 } } }
+      title: { display: true, text: '本周贡献占比', font: {size:12,weight:'600'}, color: '#546e7a', padding: {bottom:8} },
+      datalabels: { color: '#fff', font: {size:12,weight:'bold'},
+        formatter: (v, ctx) => { const total = ctx.dataset.data.reduce((a,b) => a+b, 0); const pct = (v/total*100).toFixed(1); return pct > 4 ? pct+'%' : ''; } },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:10, font: {size:11}} }
     }
   }
 });
 </script>
-
 </body>
 </html>
