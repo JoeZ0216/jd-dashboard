@@ -593,7 +593,7 @@ aliCharts.push(new Chart(document.getElementById('ownerChart'), {
     },
     scales: { y: { beginAtZero: true, max: 70, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
   }
-});)
+}));
 
 // ====== 2. Category rate horizontal bar ======
 aliCharts.push(new Chart(document.getElementById('catRateChart'), {
@@ -621,7 +621,7 @@ aliCharts.push(new Chart(document.getElementById('catRateChart'), {
     },
     scales: { x: { beginAtZero: true, max: 75, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   }
-});)
+}));
 
 // ====== 3. YoY ======
 aliCharts.push(new Chart(document.getElementById('yoyChart'), {
@@ -657,7 +657,7 @@ aliCharts.push(new Chart(document.getElementById('yoyChart'), {
       ctx.fillText('持平线', x, yScale.top - 2); ctx.restore();
     }
   }]
-});)
+}));
 
 // ====== 4. Amount structure ======
 aliCharts.push(new Chart(document.getElementById('amountChart'), {
@@ -684,7 +684,7 @@ aliCharts.push(new Chart(document.getElementById('amountChart'), {
     },
     scales: { x: { beginAtZero: true, ticks: {callback: v => v>=10000?(v/10000).toFixed(1)+'亿':v+'万'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
   }
-});)
+}));
 
 // ====== 5. Weekly completion ======
 aliCharts.push(new Chart(document.getElementById('weeklyChart'), {
@@ -726,7 +726,7 @@ aliCharts.push(new Chart(document.getElementById('weeklyChart'), {
       ctx.restore();
     }
   }]
-});)
+}));
 
 // ====== 6. Scenario projection ======
 aliCharts.push(new Chart(document.getElementById('scenarioChart'), {
@@ -763,7 +763,7 @@ aliCharts.push(new Chart(document.getElementById('scenarioChart'), {
     },
     scales: { y: { beginAtZero: true, max: 110, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
   }
-});)
+}));
 
 // ====== 7. Weekly Donut ======
 aliCharts.push(new Chart(document.getElementById('weeklyDonut'), {
@@ -786,7 +786,7 @@ aliCharts.push(new Chart(document.getElementById('weeklyDonut'), {
       legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:10, font: {size:11}} }
     }
   }
-});)
+}));
 </script>
 </body>
 </html>
