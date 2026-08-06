@@ -9,14 +9,16 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f6fa; color: #2c3e50; }
-.tab-nav { background: #fff; border-bottom: 2px solid #eceff1; padding: 0 32px; display: flex; gap: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
-.tab-btn { padding: 14px 28px; font-size: 15px; font-weight: 700; border: none; background: none; cursor: pointer; color: #78909c; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
-.tab-btn:hover { color: #37474f; }
-.tab-btn.active { color: #1a237e; border-bottom-color: #1a237e; }
-.tab-btn .badge-tab { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 8px; margin-left: 6px; font-weight: 600; }
-.tab-btn:nth-child(1) .badge-tab { background: #e8eaf6; color: #1a237e; }
-.tab-btn:nth-child(2) .badge-tab { background: #fff3e0; color: #e65100; }
-@media (max-width: 768px) { .tab-nav { padding: 0 12px; } .tab-btn { padding: 12px 16px; font-size: 13px; } }
+.header { background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%); color: #fff; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 22px; font-weight: 700; }
+.header .meta { font-size: 13px; opacity: 0.85; }
+
+/* Tab Navigation */
+.tab-nav { display: flex; gap: 0; background: #fff; margin: 0 32px; border-radius: 12px 12px 0 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden; }
+.tab-btn { flex: 1; padding: 14px 24px; border: none; background: #f8f9fb; font-size: 15px; font-weight: 600; color: #78909c; cursor: pointer; transition: all 0.2s; border-bottom: 3px solid transparent; font-family: inherit; }
+.tab-btn:hover { background: #eceff1; color: #546e7a; }
+.tab-btn.active { background: #fff; color: #1a237e; border-bottom-color: #1a237e; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f6fa; color: #2c3e50; }
 .header { background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%); color: #fff; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; }
@@ -182,16 +184,87 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
   .annual-bar-item { grid-template-columns: 50px 1fr 46px 46px; }
   .annual-bar-fill .inner-label { display: none; }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header { padding: 16px 16px; flex-direction: column; gap: 6px; align-items: flex-start; }
+  .header h1 { font-size: 17px; }
+  .header .meta { font-size: 11px; }
+  .header > div:last-child { font-size: 10px; }
+  .tab-nav { margin: 0 12px; }
+  .tab-btn { padding: 12px 16px; font-size: 14px; }
+
+  .annual-hero { margin: 12px 12px; padding: 18px 14px; }
+  .annual-hero-grid { grid-template-columns: 1fr; gap: 18px; justify-items: center; }
+  .annual-gauge-wrap { width: 150px; height: 150px; }
+  .annual-gauge-svg { width: 150px; height: 150px; }
+  .annual-gauge-center .pct { font-size: 26px; }
+  .annual-bars { width: 100%; }
+  .annual-bar-item { grid-template-columns: 60px 1fr 52px 52px; gap: 4px; }
+  .annual-bar-name { font-size: 12px; }
+  .annual-bar-fill .inner-label { font-size: 9px; right: 4px; }
+  .annual-bar-pct { font-size: 12px; }
+  .annual-bar-delta { font-size: 10px; }
+  .annual-bar-timeline-label { font-size: 9px; }
+
+  .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 14px 12px; }
+  .kpi-card { padding: 14px; }
+  .kpi-value { font-size: 20px; }
+  .kpi-label { font-size: 11px; }
+  .kpi-sub { font-size: 10px; }
+
+  .section { padding: 8px 12px 14px; }
+  .section-title { font-size: 14px; }
+  .charts-row { grid-template-columns: 1fr; gap: 12px; }
+  .charts-row-3 { grid-template-columns: 1fr; gap: 12px; }
+  .charts-row-4 { grid-template-columns: 1fr; gap: 12px; }
+  .chart-card { padding: 14px; }
+  .chart-card h3 { font-size: 13px; }
+  .chart-wrap { height: 240px; }
+  .chart-wrap-sm { height: 180px; }
+
+  .risk-table-wrap { padding: 8px 12px 14px; }
+  .risk-table th { font-size: 11px; padding: 8px 8px; }
+  .risk-table td { font-size: 11px; padding: 8px 8px; }
+  .risk-table { display: block; overflow-x: auto; white-space: nowrap; }
+
+  .line-card { padding: 14px; }
+
+  .weekly-wrap { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+  .weekly-summary { border-right: none; border-bottom: 1px solid #eceff1; padding-right: 0; padding-bottom: 16px; }
+  .weekly-amount { font-size: 28px; }
+  .weekly-lines { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .weekly-chart { height: 180px; }
+  .wl-amount { font-size: 16px; }
+
+  .footer { font-size: 10px; padding: 12px; }
+}
+@media (max-width: 380px) {
+  .kpi-row { grid-template-columns: 1fr; }
+  .annual-bar-item { grid-template-columns: 50px 1fr 46px 46px; }
+  .annual-bar-fill .inner-label { display: none; }
+}
 </style>
 </head>
 <body>
 
-<div class="tab-nav">
-  <button class="tab-btn active" onclick="switchTab('jd')" id="tab-jd">📊 京东看板<span class="badge-tab">JD</span></button>
-  <button class="tab-btn" onclick="switchTab('ali')" id="tab-ali">📊 阿里看板<span class="badge-tab">Ali</span></button>
+<div class="header">
+  <div>
+    <h1>📊 电商业务进度看板</h1>
+    <div class="meta">京东 · 阿里 | 数据截止 2026年第31-32周</div>
+  </div>
+  <div style="font-size:12px; opacity:0.7;">医药工业电商运营</div>
 </div>
 
+<!-- Tab Navigation -->
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('jd')">📊 京东看板</button>
+  <button class="tab-btn" onclick="switchTab('ali')">📊 阿里看板</button>
+</div>
+
+<!-- JD Content -->
 <div id="jd-content">
+
 <div class="header">
   <div>
     <h1>📊 京东平台电商业务看板</h1>
@@ -313,7 +386,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
     </div>
 <!-- 右：饼图 -->
     <div class="weekly-chart">
-      <canvas id="jd-weeklyDonut"></canvas>
+      <canvas id="weeklyDonut"></canvas>
     </div>
   </div>
 </div>
@@ -499,7 +572,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
     </div>
     <div class="chart-card">
       <h3>下半年三种情景推演（基于最新数据）</h3>
-      <div class="chart-wrap"><canvas id="jd-scenarioChart"></canvas></div>
+      <div class="chart-wrap"><canvas id="scenarioChart"></canvas></div>
     </div>
   </div>
 </div>
@@ -525,9 +598,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 </div>
 
 <div class="footer">京东平台电商业务看板 | 数据来源：电商运营部 | 更新于 2026-08-06（第32周） | 仅供参考</div>
+
+<div class="footer">京东平台电商业务看板 | 数据来源：电商运营部 | 更新于 2026-08-06（第32周） | 仅供参考</div>
 </div>
 
+<!-- Ali Content (hidden by default) -->
 <div id="ali-content" style="display:none;">
+
 <div class="header">
   <div>
     <h1>📊 阿里平台电商业务看板</h1>
@@ -651,7 +728,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
       </div>
     </div>
     <div class="weekly-chart">
-      <canvas id="ali-weeklyDonut"></canvas>
+      <canvas id="weeklyDonut"></canvas>
     </div>
   </div>
 </div>
@@ -881,7 +958,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
     </div>
     <div class="chart-card">
       <h3>下半年三种情景推演（基于当前48.3%）</h3>
-      <div class="chart-wrap"><canvas id="ali-scenarioChart"></canvas></div>
+      <div class="chart-wrap"><canvas id="scenarioChart"></canvas></div>
     </div>
   </div>
 </div>
@@ -906,583 +983,585 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft
 </div>
 
 <div class="footer">阿里平台电商业务看板 | 数据来源：电商运营部（Y26POA-王鹏-动销V7） | 更新于 2026-08-03（第31周） | 仅供参考</div>
+
+<div class="footer">阿里平台电商业务看板 | 数据来源：电商运营部（Y26POA-王鹏-动销V7） | 更新于 2026-08-03（第31周） | 仅供参考</div>
 </div>
 
 <script>
+// Shared Chart.js config
 Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif";
 Chart.defaults.font.size = 11;
 Chart.defaults.color = '#546e7a';
 Chart.register(ChartDataLabels);
 
-var jdCharts = [];
-var aliCharts = [];
-var jdInitDone = false;
-var aliInitDone = false;
+// JD-specific state
+const jdCharts = [];
+const C_JD = {
+  cunliang: '#1565c0', erhua: '#e65100', yixuesheng: '#2e7d32', fuhua: '#6a1b9a',
+  red: '#c62828', orange: '#ff9800', green: '#4caf50', gray: '#78909c'
+};
 
-function initJdCharts() {
-  if (jdInitDone) return;
-  jdInitDone = true;
-  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif";
-  Chart.defaults.font.size = 11;
-  Chart.defaults.color = '#546e7a';
-  Chart.register(ChartDataLabels);
+// Ali-specific state
+const aliCharts = [];
+const TP_ALI = 58.4;
+const colors_ali = ['#1565c0','#4caf50','#3949ab','#1a237e','#c62828','#00838f','#ff9800','#6a1b9a','#2e7d32'];
+const catNames_ali = ['处方药','肠胃用药','小儿感冒','益血生','皮肤','风湿骨痛','维矿物质','呼吸','妇科用药'];
+const catRates_ali = [13.6,38.8,38.9,41.1,43.4,44.3,49.1,50.4,67.1];
+const catColors_ali = ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'];
 
-  const C = {
-    cunliang: '#1565c0', erhua: '#e65100', yixuesheng: '#2e7d32', fuhua: '#6a1b9a',
-    red: '#c62828', orange: '#ff9800', green: '#4caf50', gray: '#78909c'
-  };
-
-  // ====== 1. 四线年度进度 ======
-  jdCharts.push(new Chart(document.getElementById('fourLineAnnual'), {
-    type: 'bar',
-    data: {
-      labels: ['存量', '二硫化硒', '益血生', '孵化品'],
-      datasets: [{
-        label: '年度完成率',
-        data: [46.5, 43.3, 66.0, 63.4],
-        backgroundColor: [C.cunliang, C.erhua, C.yixuesheng, C.fuhua],
-        borderRadius: 6,
-        barPercentage: 0.55,
-      }, {
-        label: '时间进度 58.6%',
-        data: Array(4).fill(58.6),
-        type: 'line',
-        borderColor: '#c62828',
-        borderDash: [6, 3],
-        borderWidth: 2,
-        pointRadius: 0,
-        fill: false,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: {
-          display: ctx => ctx.datasetIndex === 0,
-          anchor: 'end', align: 'top',
-          font: {size: 13, weight: 'bold'},
-          color: ctx => ctx.raw >= 56.7 ? C.green : C.orange,
-          formatter: v => v + '%'
-        },
-        legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
-      },
-      scales: { y: { beginAtZero: true, max: 75, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
-    }
-  });
-
-  // ====== 2. 四线Q3进度 ======
-  new Chart(document.getElementById('fourLineQ3'), {
-    type: 'bar',
-    data: {
-      labels: ['存量', '二硫化硒', '益血生', '孵化品'],
-      datasets: [{
-        label: 'Q3完成率',
-        data: [26.2, 18.5, 47.2, 29.3],
-        backgroundColor: [C.cunliang, C.erhua, C.yixuesheng, C.fuhua],
-        borderRadius: 6,
-        barPercentage: 0.55,
-      }, {
-        label: 'Q3时间进度 35.9%',
-        data: Array(4).fill(35.9),
-        type: 'line',
-        borderColor: '#c62828',
-        borderDash: [6, 3],
-        borderWidth: 2,
-        pointRadius: 0,
-        fill: false,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: {
-          display: ctx => ctx.datasetIndex === 0,
-          anchor: 'end', align: 'top',
-          font: {size: 13, weight: 'bold'},
-          color: ctx => ctx.raw >= 26.2 ? C.green : C.orange,
-          formatter: v => v + '%'
-        },
-        legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
-      },
-      scales: { y: { beginAtZero: true, max: 30, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
-    }
-  });
-
-  // ====== 3. 四线金额贡献 ======
-  new Chart(document.getElementById('fourLineAmount'), {
-    type: 'bar',
-    data: {
-      labels: ['存量', '二硫化硒', '益血生', '孵化品'],
-      datasets: [{
-        label: '年度目标',
-        data: [23190, 931, 863, 1553],
-        backgroundColor: ['rgba(21,101,192,0.2)', 'rgba(230,81,0,0.2)', 'rgba(46,125,50,0.2)', 'rgba(106,27,154,0.2)'],
-        borderColor: [C.cunliang, C.erhua, C.yixuesheng, C.fuhua],
-        borderWidth: 1.5,
-        borderRadius: 6,
-        barPercentage: 0.5,
-      }, {
-        label: '当前实际',
-        data: [10782, 403, 570, 985],
-        backgroundColor: [C.cunliang, C.erhua, C.yixuesheng, C.fuhua],
-        borderRadius: 6,
-        barPercentage: 0.5,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: {
-          display: ctx => ctx.datasetIndex === 1,
-          anchor: 'end', align: 'top',
-          font: {size: 11, weight: 'bold'},
-          color: ctx => [C.cunliang, C.erhua, C.yixuesheng, C.fuhua][ctx.dataIndex],
-          formatter: v => v.toLocaleString() + '万'
-        },
-        legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
-      },
-      scales: { y: { beginAtZero: true, ticks: { callback: v => v >= 10000 ? (v/10000)+'亿' : v+'万' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
-    }
-  });
-
-  // ====== 4. 四线同比增长 ======
-  new Chart(document.getElementById('fourLineYoy'), {
-    type: 'bar',
-    data: {
-      labels: ['存量', '二硫化硒', '益血生', '孵化品'],
-      datasets: [{
-        label: '年度同比增长率',
-        data: [24.4, 23.1, null, -13.2],
-        backgroundColor: ctx => ctx.raw !== null && ctx.raw >= 0 ? C.green : C.red,
-        borderRadius: 6,
-        barPercentage: 0.4,
-      }, {
-        label: 'Q3同比增长率',
-        data: [45.0, 18.6, null, -36.9],
-        backgroundColor: ctx => ctx.raw !== null && ctx.raw >= 0 ? 'rgba(76,175,80,0.5)' : 'rgba(244,67,54,0.5)',
-        borderColor: ctx => ctx.raw !== null && ctx.raw >= 0 ? C.green : C.red,
-        borderWidth: 1.5,
-        borderRadius: 6,
-        barPercentage: 0.4,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: {
-          anchor: ctx => ctx.raw !== null && ctx.raw >= 0 ? 'end' : 'start',
-          align: ctx => ctx.raw !== null && ctx.raw >= 0 ? 'top' : 'bottom',
-          font: {size: 11, weight: 'bold'},
-          color: ctx => ctx.raw !== null && ctx.raw >= 0 ? C.green : C.red,
-          formatter: v => v !== null ? v + '%' : '—'
-        },
-        legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
-      },
-      scales: { y: { ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
-    }
-  });
-
-  // ====== 5. 存量品类年度进度拆解 ======
-  new Chart(document.getElementById('categoryAnnual'), {
-    type: 'bar',
-    data: {
-      labels: ['呼吸类', '肠胃类(一喵灵)', '皮肤类-存量', '皮肤类-二硫化硒', 'OTC存量合计'],
-      datasets: [{
-        label: '年度完成率',
-        data: [43.6, 50.5, 67.6, 43.3, 47.2],
-        backgroundColor: ['#42a5f5', '#66bb6a', '#ffa726', '#ef5350', '#1a237e'],
-        borderRadius: 6,
-        barPercentage: 0.55,
-      }, {
-        label: '时间进度 58.6%',
-        data: Array(5).fill(58.6),
-        type: 'line',
-        borderColor: '#c62828',
-        borderDash: [6, 3],
-        borderWidth: 2,
-        pointRadius: 0,
-        fill: false,
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: {
-          display: ctx => ctx.datasetIndex === 0,
-          anchor: 'end', align: 'center',
-          font: {size: 12, weight: 'bold'},
-          color: '#fff',
-          formatter: v => v + '%'
-        },
-        legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
-      },
-      scales: {
-        x: { beginAtZero: true, max: 70, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } },
-        y: { grid: { display: false } }
-      }
-    }
-  });
-
-  // ====== 6. 情景推演（基于最新48.0%） ======
-  new Chart(document.getElementById('jd-scenarioChart'), {
-    type: 'line',
-    data: {
-      labels: ['当前\n48.0%', 'Q3末', 'Q4末'],
-      datasets: [{
-        label: '乐观 ✅ (95-100%)',
-        data: [48.0, 75, 99],
-        borderColor: '#4caf50',
-        backgroundColor: 'rgba(76,175,80,0.08)',
-        fill: true, tension: 0.3, borderWidth: 2.5,
-        pointRadius: 5, pointBackgroundColor: '#4caf50',
-      }, {
-        label: '中性 ⚖️ (88-92%)',
-        data: [48.0, 69, 91],
-        borderColor: '#ff9800',
-        backgroundColor: 'rgba(255,152,0,0.08)',
-        fill: true, tension: 0.3, borderWidth: 2.5,
-        pointRadius: 5, pointBackgroundColor: '#ff9800',
-      }, {
-        label: '悲观 ❌ (82-85%)',
-        data: [48.0, 63, 84],
-        borderColor: '#f44336',
-        backgroundColor: 'rgba(244,67,54,0.08)',
-        fill: true, tension: 0.3, borderWidth: 2.5,
-        pointRadius: 5, pointBackgroundColor: '#f44336',
-      }, {
-        label: '100% 目标线',
-        data: [100, 100, 100],
-        borderColor: '#90a4ae',
-        borderDash: [8, 4],
-        borderWidth: 1.5,
-        pointRadius: 0,
-        fill: false,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { display: ctx => ctx.dataIndex > 0, anchor: 'end', align: 'top', font: {size: 11, weight: 'bold'}, color: ctx => ctx.dataset.borderColor, formatter: v => v + '%' },
-        legend: { position: 'bottom', labels: {usePointStyle: true, padding: 12} }
-      },
-      scales: { y: { beginAtZero: true, max: 110, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
-    }
-  });
-
-  // ====== 7. 当周完成贡献饼图 ======
-  new Chart(document.getElementById('jd-weeklyDonut'), {
-    type: 'doughnut',
-    data: {
-      labels: ['存量', '二硫化硒', '益血生', '孵化品'],
-      datasets: [{
-        data: [222, 8, 28, 16],
-        backgroundColor: [C.cunliang, C.erhua, C.yixuesheng, C.fuhua],
-        borderWidth: 2,
-        borderColor: '#fff',
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      cutout: '62%',
-      plugins: {
-        title: { display: true, text: '本周贡献占比', font: { size: 12, weight: '600' }, color: '#546e7a', padding: { bottom: 8 } },
-        datalabels: {
-          color: '#fff',
-          font: { size: 12, weight: 'bold' },
-          formatter: (v, ctx) => {
-            const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-            const pct = (v / total * 100).toFixed(1);
-            return pct > 4 ? pct + '%' : '';
-          }
-        },
-        legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 10, font: { size: 11 } } }
-      }
-    }
-  }));
-}
-
-function destroyJdCharts() {
-  jdCharts.forEach(function(c) { c.destroy(); });
-  jdCharts = [];
-  jdInitDone = false;
-}
-
-function initAliCharts() {
-  if (aliInitDone) return;
-  aliInitDone = true;
-  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif";
-  Chart.defaults.font.size = 11;
-  Chart.defaults.color = '#546e7a';
-  Chart.register(ChartDataLabels);
-  const TP = 58.4;
-
-  const colors = ['#1565c0','#4caf50','#3949ab','#1a237e','#c62828','#00838f','#ff9800','#6a1b9a','#2e7d32'];
-  const catNames = ['处方药','肠胃用药','小儿感冒','益血生','皮肤','风湿骨痛','维矿物质','呼吸','妇科用药'];
-  const catRates = [13.6,38.8,38.9,41.1,43.4,44.3,49.1,50.4,67.1];
-  const catColors = ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'];
-
-  // ====== 1. Owner weighted ======
-  aliCharts.push(new Chart(document.getElementById('ownerChart'), {
-    type: 'bar',
-    data: {
-      labels: ['伍文聪','陆晓冰','闵野','戴家卫','卢尧'],
-      datasets: [{
-        label: '加权实际进度（%）',
-        data: [50.4,45.0,43.4,35.0,42.7],
-        backgroundColor: ['#1565c0','#6a1b9a','#3949ab','#c62828','#2e7d32'],
-        borderRadius: 6, barPercentage: 0.55,
-      }, {
-        label: '时间进度 58.4%',
-        data: Array(5).fill(TP),
-        type: 'line', borderColor: '#c62828', borderDash: [6, 3], borderWidth: 2, pointRadius: 0, fill: false,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { display: ctx => ctx.datasetIndex === 0, anchor: 'end', align: 'top', font: {size:13,weight:'bold'},
-          color: ctx => ctx.raw >= TP ? '#2e7d32' : '#e65100', formatter: v => v + '%' },
-        legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
-      },
-      scales: { y: { beginAtZero: true, max: 70, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
-    }
-  });
-
-  // ====== 2. Category rate horizontal bar ======
-  new Chart(document.getElementById('catRateChart'), {
-    type: 'bar',
-    data: {
-      labels: catNames,
-      datasets: [{
-        label: '年度完成率',
-        data: catRates,
-        backgroundColor: ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'],
-        borderRadius: 6, barPercentage: 0.55,
-      }, {
-        label: '时间进度 58.4%',
-        data: Array(9).fill(TP),
-        type: 'line', borderColor: '#c62828', borderDash: [6,3], borderWidth: 2, pointRadius: 0, fill: false,
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { display: ctx => ctx.datasetIndex === 0, anchor: 'end', align: 'center', font: {size:12,weight:'bold'},
-          color: '#fff', formatter: v => v + '%' },
-        legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
-      },
-      scales: { x: { beginAtZero: true, max: 75, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
-    }
-  });
-
-  // ====== 3. YoY ======
-  new Chart(document.getElementById('yoyChart'), {
-    type: 'bar',
-    data: {
-      labels: ['维矿物质','妇科用药','风湿骨痛','小儿感冒','皮肤','肠胃用药','处方药','呼吸','益血生'],
-      datasets: [{
-        label: '累计同比增长率',
-        data: [-53.3,-28.2,-23.9,-17.2,-7.2,11.1,12.9,28.0,48.6],
-        backgroundColor: ctx => ctx.raw >= 0 ? '#4caf50' : '#c62828',
-        borderRadius: 6, barPercentage: 0.5,
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { anchor: ctx => ctx.raw >= 0 ? 'end' : 'start', align: ctx => ctx.raw >= 0 ? 'top' : 'bottom',
-          font: {size:12,weight:'bold'}, color: ctx => ctx.raw >= 0 ? '#2e7d32' : '#c62828',
-          formatter: v => (v>=0?'+':'') + v + '%' },
-        legend: { display: false }
-      },
-      scales: { x: { min: -60, max: 80, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
-    },
-    plugins: [{
-      id: 'zeroLine',
-      afterDraw: function(chart) {
-        const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y;
-        const x = xScale.getPixelForValue(0);
-        ctx.save(); ctx.beginPath(); ctx.strokeStyle = '#78909c'; ctx.lineWidth = 1.5;
-        ctx.moveTo(x, yScale.top); ctx.lineTo(x, yScale.bottom); ctx.stroke();
-        ctx.fillStyle = '#78909c'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
-        ctx.fillText('持平线', x, yScale.top - 2); ctx.restore();
-      }
-    }]
-  });
-
-  // ====== 4. Amount structure ======
-  new Chart(document.getElementById('amountChart'), {
-    type: 'bar',
-    data: {
-      labels: ['呼吸','妇科用药','皮肤','肠胃用药','处方药','小儿感冒','维矿物质','风湿骨痛','益血生'],
-      datasets: [{
-        label: '年度目标',
-        data: [17972.6,20.8,3796.0,1996.9,365.0,820.6,481.3,686.2,3500.0],
-        backgroundColor: 'rgba(21,101,192,0.15)', borderColor: '#1565c0', borderWidth: 1.5, borderRadius: 6, barPercentage: 0.5,
-      }, {
-        label: '当前实际',
-        data: [9053.4,13.9,1649.0,775.7,49.8,319.1,236.4,303.9,1439.5],
-        backgroundColor: '#3949ab', borderRadius: 6, barPercentage: 0.5,
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { display: ctx => ctx.datasetIndex === 1, anchor: 'end', align: 'end', font: {size:11,weight:'bold'},
-          color: '#3949ab', formatter: v => v.toLocaleString() + '万' },
-        legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
-      },
-      scales: { x: { beginAtZero: true, ticks: {callback: v => v>=10000?(v/10000).toFixed(1)+'亿':v+'万'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
-    }
-  });
-
-  // ====== 5. Weekly completion ======
-  new Chart(document.getElementById('weeklyChart'), {
-    type: 'bar',
-    data: {
-      labels: ['处方药','小儿感冒','妇科用药','肠胃用药','风湿骨痛','皮肤','维矿物质','呼吸'],
-      datasets: [{
-        label: '周完成率',
-        data: [16.5,33.0,40.1,64.1,75.1,113.3,117.5,187.7],
-        backgroundColor: ctx => ctx.raw >= 100 ? '#4caf50' : ctx.raw >= 80 ? '#ff9800' : '#c62828',
-        borderRadius: 6, barPercentage: 0.6,
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { anchor: 'end', align: 'end', font: {size:12,weight:'bold'},
-          color: ctx => ctx.raw >= 100 ? '#2e7d32' : ctx.raw >= 80 ? '#e65100' : '#c62828',
-          formatter: v => v + '%' },
-        legend: { display: false }
-      },
-      scales: { x: { beginAtZero: true, max: 200, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
-    },
-    plugins: [{
-      id: 'weekTargetLine',
-      afterDraw: function(chart) {
-        const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y;
-        const x = xScale.getPixelForValue(100);
-        ctx.save(); ctx.beginPath(); ctx.strokeStyle = '#4caf50'; ctx.lineWidth = 2.5; ctx.setLineDash([6, 4]);
-        ctx.moveTo(x, yScale.top); ctx.lineTo(x, yScale.bottom); ctx.stroke();
-        ctx.setLineDash([]);
-        ctx.fillStyle = '#4caf50'; ctx.font = 'bold 12px sans-serif'; ctx.textAlign = 'center';
-        ctx.fillText('周达标线 100%', x, yScale.top - 8);
-        ctx.globalAlpha = 0.06; ctx.fillStyle = '#4caf50';
-        ctx.fillRect(xScale.left, yScale.top, x - xScale.left, yScale.bottom - yScale.top);
-        ctx.globalAlpha = 0.04; ctx.fillStyle = '#c62828';
-        ctx.fillRect(x, yScale.top, xScale.right - x, yScale.bottom - yScale.top);
-        ctx.restore();
-      }
-    }]
-  });
-
-  // ====== 6. Scenario projection ======
-  new Chart(document.getElementById('ali-scenarioChart'), {
-    type: 'line',
-    data: {
-      labels: ['当前\n48.3%', 'Q3末', 'Q4末'],
-      datasets: [{
-        label: '乐观 ✅ (95-100%)',
-        data: [48.3, 73, 98],
-        borderColor: '#4caf50', backgroundColor: 'rgba(76,175,80,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
-        pointRadius: 5, pointBackgroundColor: '#4caf50',
-      }, {
-        label: '中性 ⚖️ (88-92%)',
-        data: [48.3, 66, 89],
-        borderColor: '#ff9800', backgroundColor: 'rgba(255,152,0,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
-        pointRadius: 5, pointBackgroundColor: '#ff9800',
-      }, {
-        label: '悲观 ❌ (78-82%)',
-        data: [48.3, 58, 80],
-        borderColor: '#f44336', backgroundColor: 'rgba(244,67,54,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
-        pointRadius: 5, pointBackgroundColor: '#f44336',
-      }, {
-        label: '100% 目标线',
-        data: [100, 100, 100],
-        borderColor: '#90a4ae', borderDash: [8, 4], borderWidth: 1.5, pointRadius: 0, fill: false,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        datalabels: { display: ctx => ctx.dataIndex > 0, anchor: 'end', align: 'top', font: {size:11,weight:'bold'},
-          color: ctx => ctx.dataset.borderColor, formatter: v => v + '%' },
-        legend: { position: 'bottom', labels: {usePointStyle:true, padding:12} }
-      },
-      scales: { y: { beginAtZero: true, max: 110, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
-    }
-  });
-
-  // ====== 7. Weekly Donut ======
-  new Chart(document.getElementById('ali-weeklyDonut'), {
-    type: 'doughnut',
-    data: {
-      labels: ['呼吸','皮肤','肠胃用药','维矿物质','其他'],
-      datasets: [{
-        data: [648.8,82.7,24.6,10.9,16.4],
-        backgroundColor: ['#1565c0','#3949ab','#1a237e','#ff9800','#b0bec5'],
-        borderWidth: 2, borderColor: '#fff',
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      cutout: '62%',
-      plugins: {
-        title: { display: true, text: '本周贡献占比', font: {size:12,weight:'600'}, color: '#546e7a', padding: {bottom:8} },
-        datalabels: { color: '#fff', font: {size:12,weight:'bold'},
-          formatter: (v, ctx) => { const total = ctx.dataset.data.reduce((a,b) => a+b, 0); const pct = (v/total*100).toFixed(1); return pct > 4 ? pct+'%' : ''; } },
-        legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:10, font: {size:11}} }
-      }
-    }
-  }));
-}
-
-function destroyAliCharts() {
-  aliCharts.forEach(function(c) { c.destroy(); });
-  aliCharts = [];
-  aliInitDone = false;
-}
-
-// ---- 响应式 resize ----
-let _resizeTimer = null;
-window.addEventListener('resize', function() {
-  clearTimeout(_resizeTimer);
-  _resizeTimer = setTimeout(function() {
-    jdCharts.forEach(function(c) { try { c.resize(); } catch(e) {} });
-    aliCharts.forEach(function(c) { try { c.resize(); } catch(e) {} });
+// Responsive resize handlers
+let _jdResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_jdResizeTimer);
+  _jdResizeTimer = setTimeout(() => {
+    jdCharts.forEach(c => { try { c.resize(); } catch(e) {} });
+    aliCharts.forEach(c => { try { c.resize(); } catch(e) {} });
   }, 150);
 });
 
+// Tab switching
+let _jdInitialized = false;
+let _aliInitialized = false;
+
 function switchTab(tab) {
-  var jdContent = document.getElementById('jd-content');
-  var aliContent = document.getElementById('ali-content');
-  var tabJd = document.getElementById('tab-jd');
-  var tabAli = document.getElementById('tab-ali');
-  
+  const jdContent = document.getElementById('jd-content');
+  const aliContent = document.getElementById('ali-content');
+  const btns = document.querySelectorAll('.tab-btn');
+
+  btns.forEach(b => b.classList.remove('active'));
+
   if (tab === 'jd') {
-    destroyAliCharts();
-    aliContent.style.display = 'none';
     jdContent.style.display = 'block';
-    tabJd.classList.add('active');
-    tabAli.classList.remove('active');
-    setTimeout(function() { initJdCharts(); }, 50);
+    aliContent.style.display = 'none';
+    btns[0].classList.add('active');
+    if (_jdInitialized) {
+      jdCharts.forEach(c => { try { c.resize(); } catch(e) {} });
+    }
   } else {
-    destroyJdCharts();
     jdContent.style.display = 'none';
     aliContent.style.display = 'block';
-    tabJd.classList.remove('active');
-    tabAli.classList.add('active');
-    setTimeout(function() { initAliCharts(); }, 50);
+    btns[1].classList.add('active');
+    if (_aliInitialized) {
+      aliCharts.forEach(c => { try { c.resize(); } catch(e) {} });
+    }
   }
 }
 
-initJdCharts();
+// ============== JD CHARTS ==============
+function initJdCharts() {
+  if (_jdInitialized) return;
+  _jdInitialized = true;
+
+// Map the JD chart code to use C_JD and jdCharts
+// ====== 1. 四线年度进度 ======
+jdCharts.push(new Chart(document.getElementById('fourLineAnnual'), {
+  type: 'bar',
+  data: {
+    labels: ['存量', '二硫化硒', '益血生', '孵化品'],
+    datasets: [{
+      label: '年度完成率',
+      data: [46.5, 43.3, 66.0, 63.4],
+      backgroundColor: [C_JD.cunliang, C_JD.erhua, C_JD.yixuesheng, C_JD.fuhua],
+      borderRadius: 6,
+      barPercentage: 0.55,
+    }, {
+      label: '时间进度 58.6%',
+      data: Array(4).fill(58.6),
+      type: 'line',
+      borderColor: '#c62828',
+      borderDash: [6, 3],
+      borderWidth: 2,
+      pointRadius: 0,
+      fill: false,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: {
+        display: ctx => ctx.datasetIndex === 0,
+        anchor: 'end', align: 'top',
+        font: {size: 13, weight: 'bold'},
+        color: ctx => ctx.raw >= 56.7 ? C_JD.green : C_JD.orange,
+        formatter: v => v + '%'
+      },
+      legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
+    },
+    scales: { y: { beginAtZero: true, max: 75, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
+  }
+}}));
+
+// ====== 2. 四线Q3进度 ======
+jdCharts.push(new Chart(document.getElementById('fourLineQ3'), {
+  type: 'bar',
+  data: {
+    labels: ['存量', '二硫化硒', '益血生', '孵化品'],
+    datasets: [{
+      label: 'Q3完成率',
+      data: [26.2, 18.5, 47.2, 29.3],
+      backgroundColor: [C_JD.cunliang, C_JD.erhua, C_JD.yixuesheng, C_JD.fuhua],
+      borderRadius: 6,
+      barPercentage: 0.55,
+    }, {
+      label: 'Q3时间进度 35.9%',
+      data: Array(4).fill(35.9),
+      type: 'line',
+      borderColor: '#c62828',
+      borderDash: [6, 3],
+      borderWidth: 2,
+      pointRadius: 0,
+      fill: false,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: {
+        display: ctx => ctx.datasetIndex === 0,
+        anchor: 'end', align: 'top',
+        font: {size: 13, weight: 'bold'},
+        color: ctx => ctx.raw >= 26.2 ? C_JD.green : C_JD.orange,
+        formatter: v => v + '%'
+      },
+      legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
+    },
+    scales: { y: { beginAtZero: true, max: 30, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
+  }
+}}));
+
+// ====== 3. 四线金额贡献 ======
+jdCharts.push(new Chart(document.getElementById('fourLineAmount'), {
+  type: 'bar',
+  data: {
+    labels: ['存量', '二硫化硒', '益血生', '孵化品'],
+    datasets: [{
+      label: '年度目标',
+      data: [23190, 931, 863, 1553],
+      backgroundColor: ['rgba(21,101,192,0.2)', 'rgba(230,81,0,0.2)', 'rgba(46,125,50,0.2)', 'rgba(106,27,154,0.2)'],
+      borderColor: [C_JD.cunliang, C_JD.erhua, C_JD.yixuesheng, C_JD.fuhua],
+      borderWidth: 1.5,
+      borderRadius: 6,
+      barPercentage: 0.5,
+    }, {
+      label: '当前实际',
+      data: [10782, 403, 570, 985],
+      backgroundColor: [C_JD.cunliang, C_JD.erhua, C_JD.yixuesheng, C_JD.fuhua],
+      borderRadius: 6,
+      barPercentage: 0.5,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: {
+        display: ctx => ctx.datasetIndex === 1,
+        anchor: 'end', align: 'top',
+        font: {size: 11, weight: 'bold'},
+        color: ctx => [C_JD.cunliang, C_JD.erhua, C_JD.yixuesheng, C_JD.fuhua][ctx.dataIndex],
+        formatter: v => v.toLocaleString() + '万'
+      },
+      legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
+    },
+    scales: { y: { beginAtZero: true, ticks: { callback: v => v >= 10000 ? (v/10000)+'亿' : v+'万' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
+  }
+}}));
+
+// ====== 4. 四线同比增长 ======
+jdCharts.push(new Chart(document.getElementById('fourLineYoy'), {
+  type: 'bar',
+  data: {
+    labels: ['存量', '二硫化硒', '益血生', '孵化品'],
+    datasets: [{
+      label: '年度同比增长率',
+      data: [24.4, 23.1, null, -13.2],
+      backgroundColor: ctx => ctx.raw !== null && ctx.raw >= 0 ? C_JD.green : C_JD.red,
+      borderRadius: 6,
+      barPercentage: 0.4,
+    }, {
+      label: 'Q3同比增长率',
+      data: [45.0, 18.6, null, -36.9],
+      backgroundColor: ctx => ctx.raw !== null && ctx.raw >= 0 ? 'rgba(76,175,80,0.5)' : 'rgba(244,67,54,0.5)',
+      borderColor: ctx => ctx.raw !== null && ctx.raw >= 0 ? C_JD.green : C_JD.red,
+      borderWidth: 1.5,
+      borderRadius: 6,
+      barPercentage: 0.4,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: {
+        anchor: ctx => ctx.raw !== null && ctx.raw >= 0 ? 'end' : 'start',
+        align: ctx => ctx.raw !== null && ctx.raw >= 0 ? 'top' : 'bottom',
+        font: {size: 11, weight: 'bold'},
+        color: ctx => ctx.raw !== null && ctx.raw >= 0 ? C_JD.green : C_JD.red,
+        formatter: v => v !== null ? v + '%' : '—'
+      },
+      legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
+    },
+    scales: { y: { ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
+  }
+}}));
+
+// ====== 5. 存量品类年度进度拆解 ======
+jdCharts.push(new Chart(document.getElementById('categoryAnnual'), {
+  type: 'bar',
+  data: {
+    labels: ['呼吸类', '肠胃类(一喵灵)', '皮肤类-存量', '皮肤类-二硫化硒', 'OTC存量合计'],
+    datasets: [{
+      label: '年度完成率',
+      data: [43.6, 50.5, 67.6, 43.3, 47.2],
+      backgroundColor: ['#42a5f5', '#66bb6a', '#ffa726', '#ef5350', '#1a237e'],
+      borderRadius: 6,
+      barPercentage: 0.55,
+    }, {
+      label: '时间进度 58.6%',
+      data: Array(5).fill(58.6),
+      type: 'line',
+      borderColor: '#c62828',
+      borderDash: [6, 3],
+      borderWidth: 2,
+      pointRadius: 0,
+      fill: false,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: {
+        display: ctx => ctx.datasetIndex === 0,
+        anchor: 'end', align: 'center',
+        font: {size: 12, weight: 'bold'},
+        color: '#fff',
+        formatter: v => v + '%'
+      },
+      legend: { position: 'bottom', labels: {usePointStyle: true, pointStyle: 'rectRounded', padding: 12} }
+    },
+    scales: {
+      x: { beginAtZero: true, max: 70, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } },
+      y: { grid: { display: false } }
+    }
+  }
+}}));
+
+// ====== 6. 情景推演（基于最新48.0%） ======
+jdCharts.push(new Chart(document.getElementById('scenarioChart'), {
+  type: 'line',
+  data: {
+    labels: ['当前\n48.0%', 'Q3末', 'Q4末'],
+    datasets: [{
+      label: '乐观 ✅ (95-100%)',
+      data: [48.0, 75, 99],
+      borderColor: '#4caf50',
+      backgroundColor: 'rgba(76,175,80,0.08)',
+      fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#4caf50',
+    }, {
+      label: '中性 ⚖️ (88-92%)',
+      data: [48.0, 69, 91],
+      borderColor: '#ff9800',
+      backgroundColor: 'rgba(255,152,0,0.08)',
+      fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#ff9800',
+    }, {
+      label: '悲观 ❌ (82-85%)',
+      data: [48.0, 63, 84],
+      borderColor: '#f44336',
+      backgroundColor: 'rgba(244,67,54,0.08)',
+      fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#f44336',
+    }, {
+      label: '100% 目标线',
+      data: [100, 100, 100],
+      borderColor: '#90a4ae',
+      borderDash: [8, 4],
+      borderWidth: 1.5,
+      pointRadius: 0,
+      fill: false,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { display: ctx => ctx.dataIndex > 0, anchor: 'end', align: 'top', font: {size: 11, weight: 'bold'}, color: ctx => ctx.dataset.borderColor, formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle: true, padding: 12} }
+    },
+    scales: { y: { beginAtZero: true, max: 110, ticks: { callback: v => v + '%' }, grid: { color: '#eceff1' } }, x: { grid: { display: false } } }
+  }
+}}));
+
+// ====== 7. 当周完成贡献饼图 ======
+jdCharts.push(new Chart(document.getElementById('weeklyDonut'), {
+  type: 'doughnut',
+  data: {
+    labels: ['存量', '二硫化硒', '益血生', '孵化品'],
+    datasets: [{
+      data: [222, 8, 28, 16],
+      backgroundColor: [C_JD.cunliang, C_JD.erhua, C_JD.yixuesheng, C_JD.fuhua],
+      borderWidth: 2,
+      borderColor: '#fff',
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: {
+      title: { display: true, text: '本周贡献占比', font: { size: 12, weight: '600' }, color: '#546e7a', padding: { bottom: 8 } },
+      datalabels: {
+        color: '#fff',
+        font: { size: 12, weight: 'bold' },
+        formatter: (v, ctx) => {
+          const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+          const pct = (v / total * 100).toFixed(1);
+          return pct > 4 ? pct + '%' : '';
+        }
+      },
+      legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 10, font: { size: 11 } } }
+    }
+  }
+}}));
+}
+
+// ============== ALI CHARTS ==============
+function initAliCharts() {
+  if (_aliInitialized) return;
+  _aliInitialized = true;
+
+// ====== 1. Owner weighted ======
+aliCharts.push(new Chart(document.getElementById('ownerChart'), {
+  type: 'bar',
+  data: {
+    labels: ['伍文聪','陆晓冰','闵野','戴家卫','卢尧'],
+    datasets: [{
+      label: '加权实际进度（%）',
+      data: [50.4,45.0,43.4,35.0,42.7],
+      backgroundColor: ['#1565c0','#6a1b9a','#3949ab','#c62828','#2e7d32'],
+      borderRadius: 6, barPercentage: 0.55,
+    }, {
+      label: '时间进度 58.4%',
+      data: Array(5).fill(TP_ALI),
+      type: 'line', borderColor: '#c62828', borderDash: [6, 3], borderWidth: 2, pointRadius: 0, fill: false,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { display: ctx => ctx.datasetIndex === 0, anchor: 'end', align: 'top', font: {size:13,weight:'bold'},
+        color: ctx => ctx.raw >= TP ? '#2e7d32' : '#e65100', formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
+    },
+    scales: { y: { beginAtZero: true, max: 70, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
+  }
+});)
+
+// ====== 2. Category rate horizontal bar ======
+aliCharts.push(new Chart(document.getElementById('catRateChart'), {
+  type: 'bar',
+  data: {
+    labels: catNames,
+    datasets: [{
+      label: '年度完成率',
+      data: catRates,
+      backgroundColor: ['#c62828','#1a237e','#00838f','#2e7d32','#3949ab','#6a1b9a','#ff9800','#1565c0','#4caf50'],
+      borderRadius: 6, barPercentage: 0.55,
+    }, {
+      label: '时间进度 58.4%',
+      data: Array(9).fill(TP_ALI),
+      type: 'line', borderColor: '#c62828', borderDash: [6,3], borderWidth: 2, pointRadius: 0, fill: false,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { display: ctx => ctx.datasetIndex === 0, anchor: 'end', align: 'center', font: {size:12,weight:'bold'},
+        color: '#fff', formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
+    },
+    scales: { x: { beginAtZero: true, max: 75, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
+  }
+});)
+
+// ====== 3. YoY ======
+aliCharts.push(new Chart(document.getElementById('yoyChart'), {
+  type: 'bar',
+  data: {
+    labels: ['维矿物质','妇科用药','风湿骨痛','小儿感冒','皮肤','肠胃用药','处方药','呼吸','益血生'],
+    datasets: [{
+      label: '累计同比增长率',
+      data: [-53.3,-28.2,-23.9,-17.2,-7.2,11.1,12.9,28.0,48.6],
+      backgroundColor: ctx => ctx.raw >= 0 ? '#4caf50' : '#c62828',
+      borderRadius: 6, barPercentage: 0.5,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { anchor: ctx => ctx.raw >= 0 ? 'end' : 'start', align: ctx => ctx.raw >= 0 ? 'top' : 'bottom',
+        font: {size:12,weight:'bold'}, color: ctx => ctx.raw >= 0 ? '#2e7d32' : '#c62828',
+        formatter: v => (v>=0?'+':'') + v + '%' },
+      legend: { display: false }
+    },
+    scales: { x: { min: -60, max: 80, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
+  },
+  plugins: [{
+    id: 'zeroLine',
+    afterDraw: function(chart) {
+      const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y;
+      const x = xScale.getPixelForValue(0);
+      ctx.save(); ctx.beginPath(); ctx.strokeStyle = '#78909c'; ctx.lineWidth = 1.5;
+      ctx.moveTo(x, yScale.top); ctx.lineTo(x, yScale.bottom); ctx.stroke();
+      ctx.fillStyle = '#78909c'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText('持平线', x, yScale.top - 2); ctx.restore();
+    }
+  }]
+});)
+
+// ====== 4. Amount structure ======
+aliCharts.push(new Chart(document.getElementById('amountChart'), {
+  type: 'bar',
+  data: {
+    labels: ['呼吸','妇科用药','皮肤','肠胃用药','处方药','小儿感冒','维矿物质','风湿骨痛','益血生'],
+    datasets: [{
+      label: '年度目标',
+      data: [17972.6,20.8,3796.0,1996.9,365.0,820.6,481.3,686.2,3500.0],
+      backgroundColor: 'rgba(21,101,192,0.15)', borderColor: '#1565c0', borderWidth: 1.5, borderRadius: 6, barPercentage: 0.5,
+    }, {
+      label: '当前实际',
+      data: [9053.4,13.9,1649.0,775.7,49.8,319.1,236.4,303.9,1439.5],
+      backgroundColor: '#3949ab', borderRadius: 6, barPercentage: 0.5,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { display: ctx => ctx.datasetIndex === 1, anchor: 'end', align: 'end', font: {size:11,weight:'bold'},
+        color: '#3949ab', formatter: v => v.toLocaleString() + '万' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:12} }
+    },
+    scales: { x: { beginAtZero: true, ticks: {callback: v => v>=10000?(v/10000).toFixed(1)+'亿':v+'万'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
+  }
+});)
+
+// ====== 5. Weekly completion ======
+aliCharts.push(new Chart(document.getElementById('weeklyChart'), {
+  type: 'bar',
+  data: {
+    labels: ['处方药','小儿感冒','妇科用药','肠胃用药','风湿骨痛','皮肤','维矿物质','呼吸'],
+    datasets: [{
+      label: '周完成率',
+      data: [16.5,33.0,40.1,64.1,75.1,113.3,117.5,187.7],
+      backgroundColor: ctx => ctx.raw >= 100 ? '#4caf50' : ctx.raw >= 80 ? '#ff9800' : '#c62828',
+      borderRadius: 6, barPercentage: 0.6,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { anchor: 'end', align: 'end', font: {size:12,weight:'bold'},
+        color: ctx => ctx.raw >= 100 ? '#2e7d32' : ctx.raw >= 80 ? '#e65100' : '#c62828',
+        formatter: v => v + '%' },
+      legend: { display: false }
+    },
+    scales: { x: { beginAtZero: true, max: 200, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, y: { grid: {display:false} } }
+  },
+  plugins: [{
+    id: 'weekTargetLine',
+    afterDraw: function(chart) {
+      const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y;
+      const x = xScale.getPixelForValue(100);
+      ctx.save(); ctx.beginPath(); ctx.strokeStyle = '#4caf50'; ctx.lineWidth = 2.5; ctx.setLineDash([6, 4]);
+      ctx.moveTo(x, yScale.top); ctx.lineTo(x, yScale.bottom); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#4caf50'; ctx.font = 'bold 12px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText('周达标线 100%', x, yScale.top - 8);
+      ctx.globalAlpha = 0.06; ctx.fillStyle = '#4caf50';
+      ctx.fillRect(xScale.left, yScale.top, x - xScale.left, yScale.bottom - yScale.top);
+      ctx.globalAlpha = 0.04; ctx.fillStyle = '#c62828';
+      ctx.fillRect(x, yScale.top, xScale.right - x, yScale.bottom - yScale.top);
+      ctx.restore();
+    }
+  }]
+});)
+
+// ====== 6. Scenario projection ======
+aliCharts.push(new Chart(document.getElementById('scenarioChart'), {
+  type: 'line',
+  data: {
+    labels: ['当前\n48.3%', 'Q3末', 'Q4末'],
+    datasets: [{
+      label: '乐观 ✅ (95-100%)',
+      data: [48.3, 73, 98],
+      borderColor: '#4caf50', backgroundColor: 'rgba(76,175,80,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#4caf50',
+    }, {
+      label: '中性 ⚖️ (88-92%)',
+      data: [48.3, 66, 89],
+      borderColor: '#ff9800', backgroundColor: 'rgba(255,152,0,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#ff9800',
+    }, {
+      label: '悲观 ❌ (78-82%)',
+      data: [48.3, 58, 80],
+      borderColor: '#f44336', backgroundColor: 'rgba(244,67,54,0.08)', fill: true, tension: 0.3, borderWidth: 2.5,
+      pointRadius: 5, pointBackgroundColor: '#f44336',
+    }, {
+      label: '100% 目标线',
+      data: [100, 100, 100],
+      borderColor: '#90a4ae', borderDash: [8, 4], borderWidth: 1.5, pointRadius: 0, fill: false,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      datalabels: { display: ctx => ctx.dataIndex > 0, anchor: 'end', align: 'top', font: {size:11,weight:'bold'},
+        color: ctx => ctx.dataset.borderColor, formatter: v => v + '%' },
+      legend: { position: 'bottom', labels: {usePointStyle:true, padding:12} }
+    },
+    scales: { y: { beginAtZero: true, max: 110, ticks: {callback: v=>v+'%'}, grid: {color:'#eceff1'} }, x: { grid: {display:false} } }
+  }
+});)
+
+// ====== 7. Weekly Donut ======
+aliCharts.push(new Chart(document.getElementById('weeklyDonut'), {
+  type: 'doughnut',
+  data: {
+    labels: ['呼吸','皮肤','肠胃用药','维矿物质','其他'],
+    datasets: [{
+      data: [648.8,82.7,24.6,10.9,16.4],
+      backgroundColor: ['#1565c0','#3949ab','#1a237e','#ff9800','#b0bec5'],
+      borderWidth: 2, borderColor: '#fff',
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: {
+      title: { display: true, text: '本周贡献占比', font: {size:12,weight:'600'}, color: '#546e7a', padding: {bottom:8} },
+      datalabels: { color: '#fff', font: {size:12,weight:'bold'},
+        formatter: (v, ctx) => { const total = ctx.dataset.data.reduce((a,b) => a+b, 0); const pct = (v/total*100).toFixed(1); return pct > 4 ? pct+'%' : ''; } },
+      legend: { position: 'bottom', labels: {usePointStyle:true, pointStyle:'rectRounded', padding:10, font: {size:11}} }
+    }
+  }
+});)
+}
+
+// Initialize JD charts on page load
+document.addEventListener('DOMContentLoaded', () => {
+  initJdCharts();
+});
+
+// Initialize Ali charts when switching to Ali tab for the first time
+const _origSwitchTab = switchTab;
+switchTab = function(tab) {
+  _origSwitchTab(tab);
+  if (tab === 'ali' && !_aliInitialized) {
+    initAliCharts();
+  }
+};
 </script>
 
 </body>
